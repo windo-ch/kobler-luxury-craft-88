@@ -21,10 +21,10 @@ const Navigation = ({ navItems, isMobile = false, closeMenu }: NavigationProps) 
           <Link
             key={item.title}
             to={item.url}
-            className={`font-playfair text-2xl transition-colors ${
+            className={`font-serif text-2xl transition-colors ${
               location.pathname === item.url 
-                ? 'text-luxury-gold' 
-                : 'text-luxury-charcoal hover:text-luxury-gold'
+                ? 'text-black' 
+                : 'text-black/80 hover:text-black'
             }`}
             onClick={closeMenu}
           >
@@ -41,14 +41,14 @@ const Navigation = ({ navItems, isMobile = false, closeMenu }: NavigationProps) 
         <Link
           key={item.title}
           to={item.url}
-          className={`font-montserrat text-sm uppercase tracking-wider transition-all duration-300 pb-1 relative group
+          className={`text-sm uppercase tracking-wider transition-all duration-300 pb-1 relative group
             ${location.pathname === item.url 
-              ? 'text-luxury-gold font-medium' 
-              : 'text-luxury-charcoal hover:text-luxury-gold font-medium'}`}
+              ? 'text-black font-medium' 
+              : 'text-black/80 hover:text-black font-medium'}`}
         >
           {item.title}
           <span className={`absolute bottom-0 left-0 w-full h-[1px] transform origin-left transition-transform duration-300
-            ${location.pathname === item.url ? 'bg-luxury-gold scale-x-100' : 'bg-luxury-gold scale-x-0 group-hover:scale-x-100'}`}></span>
+            ${location.pathname === item.url ? 'bg-black scale-x-100' : 'bg-black scale-x-0 group-hover:scale-x-100'}`}></span>
         </Link>
       ))}
     </div>

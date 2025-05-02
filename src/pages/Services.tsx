@@ -1,19 +1,18 @@
 
 import React from "react";
-import Layout from "../components/layout/Layout";
-import SectionTitle from "../components/ui/SectionTitle";
+import Layout from "../components/layout/KoblerLayout";
 import Button from "../components/ui/Button";
 import { Diamond, Watch, Hammer, Scale } from "lucide-react";
 
 const Services = () => {
   return (
-    <Layout>
+    <div className="pt-24">
       {/* Hero Section */}
-      <div className="relative pt-24 pb-16 bg-luxury-navy text-white">
-        <div className="luxury-container">
+      <div className="relative pt-16 pb-16 bg-black text-white">
+        <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center py-16">
-            <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-6">Dienstleistungen</h1>
-            <p className="text-xl text-luxury-light/90">
+            <h1 className="text-4xl md:text-5xl font-serif font-normal mb-6">Dienstleistungen</h1>
+            <p className="text-xl text-white/90">
               Aussergewöhnliche Handwerkskunst und Expertise für Ihre wertvollen Schmuckstücke und Uhren
             </p>
           </div>
@@ -22,15 +21,14 @@ const Services = () => {
       </div>
 
       {/* Overview Section */}
-      <section className="section-padding bg-white">
-        <div className="luxury-container">
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <SectionTitle
-              title="Umfassende Dienstleistungen"
-              subtitle="Bei Kobler Goldschmied & Uhrmacher AG bieten wir eine Reihe von spezialisierten Dienstleistungen, die alle Ihre Anforderungen an feine Uhren, exquisiten Schmuck und hochwertige Edelsteine erfüllen."
-              centered
-            />
-            <div className="prose max-w-none text-luxury-charcoal/80 mt-8">
+            <h2 className="text-3xl md:text-4xl font-serif mb-6">Umfassende Dienstleistungen</h2>
+            <p className="text-lg text-black/80">
+              Bei Kobler Goldschmied & Uhrmacher AG bieten wir eine Reihe von spezialisierten Dienstleistungen, die alle Ihre Anforderungen an feine Uhren, exquisiten Schmuck und hochwertige Edelsteine erfüllen.
+            </p>
+            <div className="prose max-w-none text-black/80 mt-8">
               <p>
                 Ob Sie auf der Suche nach einer einzigartigen Uhr, einer maßgeschneiderten Schmuckkreation, professionellen Reparaturdiensten oder einer fachkundigen Bewertung sind – unser engagiertes Team kombiniert jahrzehntelange Erfahrung mit unerschütterlicher Leidenschaft, um außergewöhnliche Ergebnisse zu erzielen.
               </p>
@@ -40,18 +38,15 @@ const Services = () => {
       </section>
 
       {/* Gold- und Silberschmied Section */}
-      <section id="goldsmith" className="section-padding bg-luxury-light">
-        <div className="luxury-container">
+      <section id="goldsmith" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="flex items-center mb-4">
-                <Hammer className="w-8 h-8 text-luxury-gold mr-3" />
-                <SectionTitle
-                  title="Gold- und Silberschmied"
-                  subtitle=""
-                />
+                <Hammer className="w-8 h-8 text-black mr-3" />
+                <h2 className="text-3xl font-serif">Gold- und Silberschmied</h2>
               </div>
-              <div className="prose max-w-none text-luxury-charcoal/80">
+              <div className="prose max-w-none text-black/80">
                 <p className="mb-4">
                   Unsere Gold- und Silberschmiede vereinen traditionelles Handwerk mit modernem Design, um außergewöhnliche Schmuckstücke zu kreieren. Mit jahrelanger Erfahrung und höchster Präzision erfüllen wir Ihre individuellen Wünsche.
                 </p>
@@ -88,8 +83,8 @@ const Services = () => {
       </section>
 
       {/* Gemmologe / Steinschleifer Section */}
-      <section id="gemologist" className="section-padding bg-white">
-        <div className="luxury-container">
+      <section id="gemologist" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
               <div className="aspect-[4/3] w-full overflow-hidden">
@@ -102,13 +97,10 @@ const Services = () => {
             </div>
             <div className="order-1 lg:order-2">
               <div className="flex items-center mb-4">
-                <Diamond className="w-8 h-8 text-luxury-gold mr-3" />
-                <SectionTitle
-                  title="Gemmologe / Steinschleifer"
-                  subtitle=""
-                />
+                <Diamond className="w-8 h-8 text-black mr-3" />
+                <h2 className="text-3xl font-serif">Gemmologe / Steinschleifer</h2>
               </div>
-              <div className="prose max-w-none text-luxury-charcoal/80">
+              <div className="prose max-w-none text-black/80">
                 <p className="mb-4">
                   Unsere Gemmologen und Steinschleifer verfügen über tiefgreifendes Fachwissen und modernste Technologien zur Analyse und Bearbeitung von Edelsteinen. Ihr Engagement für Exzellenz spiegelt sich in jedem Edelstein wider, den sie bearbeiten.
                 </p>
@@ -137,18 +129,15 @@ const Services = () => {
       </section>
 
       {/* Uhrmacher / Pendulier Section */}
-      <section id="watchmaker" className="section-padding bg-luxury-light">
-        <div className="luxury-container">
+      <section id="watchmaker" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="flex items-center mb-4">
-                <Watch className="w-8 h-8 text-luxury-gold mr-3" />
-                <SectionTitle
-                  title="Uhrmacher / Pendulier"
-                  subtitle=""
-                />
+                <Watch className="w-8 h-8 text-black mr-3" />
+                <h2 className="text-3xl font-serif">Uhrmacher / Pendulier</h2>
               </div>
-              <div className="prose max-w-none text-luxury-charcoal/80">
+              <div className="prose max-w-none text-black/80">
                 <p className="mb-4">
                   Unsere Uhrmacher kombinieren traditionelles Handwerk mit modernem Fachwissen, um Ihre Zeitmesser zu warten, zu reparieren und zu restaurieren. Mit Präzision und Sorgfalt kümmern sie sich um jedes Detail Ihrer kostbaren Uhr.
                 </p>
@@ -186,8 +175,8 @@ const Services = () => {
       </section>
 
       {/* Schätzungen Section */}
-      <section id="appraisals" className="section-padding bg-white">
-        <div className="luxury-container">
+      <section id="appraisals" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
               <div className="aspect-[4/3] w-full overflow-hidden">
@@ -200,13 +189,10 @@ const Services = () => {
             </div>
             <div className="order-1 lg:order-2">
               <div className="flex items-center mb-4">
-                <Scale className="w-8 h-8 text-luxury-gold mr-3" />
-                <SectionTitle
-                  title="Schätzungen"
-                  subtitle=""
-                />
+                <Scale className="w-8 h-8 text-black mr-3" />
+                <h2 className="text-3xl font-serif">Schätzungen</h2>
               </div>
-              <div className="prose max-w-none text-luxury-charcoal/80">
+              <div className="prose max-w-none text-black/80">
                 <p className="mb-4">
                   Unsere professionellen Bewertungsdienste bieten genaue und detaillierte Schätzungen von Uhren, Schmuck und losen Edelsteinen. Diese Bewertungen dienen verschiedenen Zwecken, darunter Versicherungsschutz, Nachlassplanung und Marktwertermittlung.
                 </p>
@@ -234,13 +220,13 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-luxury-navy text-white">
-        <div className="luxury-container">
+      <section className="py-20 bg-black text-white">
+        <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-playfair mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif mb-6">
               Erleben Sie aussergewöhnlichen Service
             </h2>
-            <p className="text-luxury-light/90 text-lg mb-8">
+            <p className="text-white/90 text-lg mb-8">
               Wir laden Sie ein, unsere Boutique in Zug zu besuchen, um unsere Kollektionen und Dienstleistungen aus erster Hand zu entdecken. Unser Expertenteam steht Ihnen bei allen Anliegen rund um Uhren und Schmuck zur Verfügung.
             </p>
             <Button to="/contact" variant="secondary" size="lg">
@@ -249,7 +235,7 @@ const Services = () => {
           </div>
         </div>
       </section>
-    </Layout>
+    </div>
   );
 };
 

@@ -36,38 +36,32 @@ const services = [
 
 const KoblerServicesOverview = () => {
   return (
-    <section className="section-padding bg-secondary">
-      <div className="container-lg">
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="heading-lg mb-6">Our Services</h2>
-          <p className="body-md max-w-2xl mx-auto text-black/80">
+          <h2 className="text-3xl md:text-4xl font-serif mb-6">Unsere Dienstleistungen</h2>
+          <p className="text-lg text-black/70 max-w-2xl mx-auto">
             Von meisterhaften Reparaturen bis hin zu exklusiven Kreationen bieten unsere Handwerker ein umfassendes Dienstleistungsspektrum.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16">
           {services.map((service) => (
             <Link 
               key={service.id} 
               to={service.link}
-              className="group"
+              className="group flex flex-col items-start"
             >
               <div className="mb-6 inline-flex items-center justify-center">
                 <service.icon size={32} className="text-black" />
               </div>
-              <h3 className="heading-sm mb-4">{service.title}</h3>
-              <p className="body-sm text-black/70 mb-4">{service.description}</p>
-              <span className="text-xs uppercase tracking-wider font-medium flex items-center hover-underline">
-                Learn more
+              <h3 className="text-xl font-serif mb-4">{service.title}</h3>
+              <p className="text-black/70 mb-4">{service.description}</p>
+              <span className="text-xs uppercase tracking-wider font-medium flex items-center border-b border-transparent group-hover:border-black transition-all duration-300">
+                Mehr erfahren
               </span>
             </Link>
           ))}
-        </div>
-        
-        <div className="text-center mt-16">
-          <Link to="/services" className="btn">
-            Explore Our Services
-          </Link>
         </div>
       </div>
     </section>
