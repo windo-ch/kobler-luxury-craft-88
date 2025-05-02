@@ -7,7 +7,7 @@ const RubyStoryHero = () => {
     <div className="relative h-[60vh] min-h-[500px]">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://goldschmied-uhrmacher.ch/wp-content/uploads/2024/08/rubycleaned-scaled.jpg"
+          src="/lovable-uploads/d36971d5-33a7-47d5-826e-21040bdc3817.png"
           alt="22-karätiger Rubin"
           className="w-full h-full object-cover"
         />

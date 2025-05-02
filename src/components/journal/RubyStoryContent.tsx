@@ -24,12 +24,12 @@ const RubyStoryContent = () => {
         <div>
           <AspectRatio ratio={4/3} className="overflow-hidden rounded-lg">
             <img 
-              src="https://goldschmied-uhrmacher.ch/wp-content/uploads/2024/08/bangkokmarket-scaled.jpg" 
-              alt="Edelsteinmarkt in Bangkok" 
+              src="/lovable-uploads/d36971d5-33a7-47d5-826e-21040bdc3817.png" 
+              alt="Rubin in seiner natürlichen Form" 
               className="object-cover w-full h-full"
             />
           </AspectRatio>
-          <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Der pulsierende Edelsteinmarkt in Bangkok - Ausgangspunkt unserer Rubin-Geschichte</p>
+          <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Rubin in seiner natürlichen Form - ein unvergesslicher Anblick</p>
         </div>
         <div>
           <p>
@@ -59,12 +59,12 @@ const RubyStoryContent = () => {
       <div className="my-12">
         <AspectRatio ratio={16/9} className="overflow-hidden rounded-lg">
           <img 
-            src="https://goldschmied-uhrmacher.ch/wp-content/uploads/2024/08/rubypurchase-scaled.jpg" 
-            alt="Übergabe des 22ct. Rubins in unserem Büro in Bangkok" 
+            src="/lovable-uploads/314e4f30-a728-4b8d-8709-631806d7b36c.png" 
+            alt="Ring mit herzförmigen Rubinen" 
             className="object-cover w-full h-full"
           />
         </AspectRatio>
-        <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Übergabe des 22ct. Rubins in unserem Büro in Bangkok.</p>
+        <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Ring mit herzförmigen Rubinen - ein Beispiel für exzellente Verarbeitung</p>
       </div>
 
       <h2 className="text-2xl font-playfair text-luxury-navy mt-12 mb-6">Der Weg von Bangkok nach Zug</h2>
@@ -102,28 +102,39 @@ const RubyStoryContent = () => {
         <div>
           <AspectRatio ratio={4/3} className="overflow-hidden rounded-lg">
             <img 
-              src="https://goldschmied-uhrmacher.ch/wp-content/uploads/2024/08/crafting-scaled.jpg" 
-              alt="Schleiferin bei der Arbeit in Bangkok" 
+              src="/lovable-uploads/002e1510-460c-4980-822a-2f008385ee11.png" 
+              alt="Hände eines Handwerkers mit einem Rubin" 
               className="object-cover w-full h-full"
             />
           </AspectRatio>
-          <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Schleiferin bei der Arbeit in Bangkok.</p>
+          <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Präzision und Fingerspitzengefühl - entscheidend bei der Arbeit mit kostbaren Steinen</p>
         </div>
         <div>
           <AspectRatio ratio={4/3} className="overflow-hidden rounded-lg">
             <img 
-              src="https://goldschmied-uhrmacher.ch/wp-content/uploads/2024/08/design1-scaled.jpg" 
-              alt="Dr. Peretti bei der Arbeit im Labor in Bangkok" 
+              src="/lovable-uploads/f5a901d7-2839-4841-925a-133973977d34.png" 
+              alt="Experte begutachtet einen Edelstein mit dem Mikroskop" 
               className="object-cover w-full h-full"
             />
           </AspectRatio>
-          <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Dr. Peretti bei der Arbeit im Labor in Bangkok.</p>
+          <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Dr. Peretti bei der detaillierten Untersuchung im Labor in Bangkok</p>
         </div>
       </div>
 
       <p>
         Selbstverständlich führen wir im eigenen Labor vor Ort parallele Untersuchungen aus, und hatten bereits ein genaues Bild des Edelsteins. Wer sonst aber als Dr. Adolf Peretti, Gründer des Instituts GRS, GemResearch Swisslab AG (ehemalig am Institute of Mineralogy and Petrography, ETH Zurich), hätte uns zusätzlich besser unterstützen können.
       </p>
+
+      <div className="my-12">
+        <AspectRatio ratio={16/9} className="overflow-hidden rounded-lg">
+          <img 
+            src="/lovable-uploads/f4eddf44-b07a-4088-a5bc-18fe8487844b.png" 
+            alt="Experte untersucht einen Edelstein mit der Lupe" 
+            className="object-cover w-full h-full"
+          />
+        </AspectRatio>
+        <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Die kritische Begutachtung - jedes Detail zählt bei einem Stein dieser Qualität</p>
+      </div>
 
       <p>
         Als dann unser langjähriger Freund und Kameramann Max Hüttermann, der auch den Namibia-Film mit uns produzierte, sich spontan dazu bereit erklärte, mitzukommen, durfte eigentlich nichts mehr schiefgehen. Wir filmten alles über die gesamte Zeit, unabhängig vom Ausgang dieser Geschichte.
@@ -136,12 +147,12 @@ const RubyStoryContent = () => {
       <div className="my-12">
         <AspectRatio ratio={16/9} className="overflow-hidden rounded-lg">
           <img 
-            src="https://goldschmied-uhrmacher.ch/wp-content/uploads/2024/08/polishing-scaled.jpg" 
-            alt="Zeichnen in unserem Büro in Bangkok" 
+            src="/lovable-uploads/cce5343f-2f03-40ab-9afb-144b5cead03c.png" 
+            alt="Designer skizziert einen Entwurf für ein Schmuckstück" 
             className="object-cover w-full h-full"
           />
         </AspectRatio>
-        <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Zeichnen in unserem Büro in Bangkok.</p>
+        <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Die kreative Phase - vom Rohstein zum Schmuckstück-Entwurf</p>
       </div>
 
       <h2 className="text-2xl font-playfair text-luxury-navy mt-12 mb-6">Das Resultat – ein 22-karätiges Meisterwerk</h2>
@@ -164,12 +175,12 @@ const RubyStoryContent = () => {
       <div className="my-12">
         <AspectRatio ratio={16/9} className="overflow-hidden rounded-lg">
           <img 
-            src="https://goldschmied-uhrmacher.ch/wp-content/uploads/2024/08/finalpiece-scaled.jpg" 
-            alt="Fertiges Schmuckstück mit Rubin" 
+            src="/lovable-uploads/82344e9a-27cc-41b8-8085-16087e71f15b.png" 
+            alt="Elegante Rubinohrringe" 
             className="object-cover w-full h-full"
           />
         </AspectRatio>
-        <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Der perfekt geschliffene Rubin in seiner vollen Pracht</p>
+        <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Handgefertigter, eleganter Ohrschmuck mit Rubinen und Diamanten</p>
       </div>
 
       <div className="bg-luxury-light/30 p-8 rounded-lg my-12 relative">
@@ -194,12 +205,23 @@ const RubyStoryContent = () => {
       <div className="my-12">
         <AspectRatio ratio={16/9} className="overflow-hidden rounded-lg">
           <img 
-            src="https://goldschmied-uhrmacher.ch/wp-content/uploads/2024/08/rubycleaned-scaled.jpg" 
-            alt="Kostbare Edelsteine von Kobler Zug, allesamt mit DNA-Markierung" 
+            src="/lovable-uploads/0f2e457f-65a2-42d9-ba23-673d898b9475.png" 
+            alt="Sammlung farbiger Edelsteine mit einem Ring" 
             className="object-cover w-full h-full"
           />
         </AspectRatio>
-        <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Kostbare Edelsteine von Kobler Zug, allesamt mit DNA-Markierung.</p>
+        <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Kostbare Edelsteine verschiedener Farben, allesamt mit DNA-Markierung</p>
+      </div>
+
+      <div className="my-12">
+        <AspectRatio ratio={16/9} className="overflow-hidden rounded-lg">
+          <img 
+            src="/lovable-uploads/0ad3c6cf-89f4-4461-b46f-f5b85f20753b.png" 
+            alt="Polieren eines Edelsteins" 
+            className="object-cover w-full h-full"
+          />
+        </AspectRatio>
+        <p className="text-sm text-luxury-charcoal/60 mt-2 italic">Der Schliff- und Polierprozess - entscheidend für die Brillanz des Steins</p>
       </div>
     </div>
   );
