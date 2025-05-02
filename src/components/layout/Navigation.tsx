@@ -43,8 +43,8 @@ const Navigation = ({ navItems, isMobile = false, closeMenu }: NavigationProps) 
           to={item.url}
           className={`font-montserrat text-sm uppercase tracking-wider transition-all duration-300 pb-1 relative group
             ${location.pathname === item.url 
-              ? 'text-luxury-gold' 
-              : 'text-luxury-charcoal hover:text-luxury-gold'}`}
+              ? 'text-luxury-gold font-medium' 
+              : 'text-luxury-charcoal hover:text-luxury-gold font-medium'}`}
         >
           {item.title}
           <span className={`absolute bottom-0 left-0 w-full h-[1px] transform origin-left transition-transform duration-300
