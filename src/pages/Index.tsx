@@ -7,6 +7,7 @@ import ServicesOverview from "../components/home/ServicesOverview";
 import FeaturedCollections from "../components/home/FeaturedCollections";
 import TestimonialsSection from "../components/home/TestimonialsSection";
 import NewsletterSection from "../components/home/NewsletterSection";
+import ImageCarousel from "../components/home/ImageCarousel";
 
 const Index = () => {
   useEffect(() => {
