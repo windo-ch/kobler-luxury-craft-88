@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
-import { Globe, ChevronDown } from "lucide-react";
+import { Globe, ChevronDown, X } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -153,7 +153,7 @@ const Header = () => {
             mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           } shadow-xl flex flex-col`}
         >
-          <div className="h-20 border-b border-gray-100 flex items-center px-6">
+          <div className="h-20 border-b border-gray-100 flex items-center justify-between px-6">
             <div className="h-6 w-auto relative">
               <img 
                 src="/lovable-uploads/e0ebbeb8-a995-43ce-9d8d-d315af3ebb77.png" 
@@ -161,6 +161,14 @@ const Header = () => {
                 className="h-full w-auto object-contain max-w-none" 
               />
             </div>
+            {/* Close Button */}
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="p-2 text-luxury-charcoal hover:text-luxury-gold focus:outline-none transition-colors"
+              aria-label="Close menu"
+            >
+              <X className="h-6 w-6" />
+            </button>
           </div>
           <nav className="flex-1 flex flex-col justify-center px-6 py-10 space-y-8">
             {navItems.map((item) => (
