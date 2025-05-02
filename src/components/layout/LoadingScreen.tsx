@@ -1,6 +1,5 @@
 
 import React, { useEffect, useState } from "react";
-import { CircleFadingPlus } from "lucide-react";
 
 interface LoadingScreenProps {
   onLoadComplete: () => void;
@@ -40,11 +39,8 @@ const LoadingScreen = ({ onLoadComplete }: LoadingScreenProps) => {
           alt="Kobler Zug Logo" 
           className="w-64 md:w-80 mb-6 animate-pulse duration-3000"
         />
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-8">
-          <CircleFadingPlus className="h-8 w-8 text-luxury-gold animate-spin" />
-        </div>
       </div>
-      <div className="mt-24 relative">
+      <div className="mt-16 relative">
         <div className="h-[1px] w-16 md:w-24 bg-gradient-to-r from-transparent via-luxury-gold to-transparent animate-pulse"></div>
       </div>
     </div>
