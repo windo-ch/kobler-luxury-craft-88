@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Layout } from "@/components/layout/Layout";
+import Layout from "@/components/layout/Layout";
 import PearlsHero from "@/components/pearls/PearlsHero";
 import PearlsHistory from "@/components/pearls/PearlsHistory";
 import PearlTypes from "@/components/pearls/PearlTypes";
