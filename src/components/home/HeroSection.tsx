@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Button } from "../ui/Button";
+import Button from "../ui/Button";
 import { ChevronRight } from "lucide-react";
 import ImageCarousel from "./ImageCarousel";
 
