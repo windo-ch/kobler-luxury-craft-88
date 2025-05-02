@@ -1,49 +1,106 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 
 interface LoadingScreenProps {
   onLoadComplete: () => void;
 }
 
+interface Gem {
+  id: number;
+  top: string;
+  left: string;
+  size: string;
+  delay: number;
+}
+
 const LoadingScreen = ({ onLoadComplete }: LoadingScreenProps) => {
   const [opacity, setOpacity] = useState(1);
+  const [revealedGems, setRevealedGems] = useState<number[]>([]);
+  
+  // Define the gems positions randomly but consistently
+  const gems = useMemo(() => {
+    return Array.from({ length: 12 }, (_, i) => ({
+      id: i,
+      top: `${Math.random() * 70 + 15}%`,
+      left: `${Math.random() * 70 + 15}%`,
+      size: `${Math.random() * 30 + 40}px`,
+      delay: Math.random() * 1000 + 100,
+    }));
+  }, []);
 
   useEffect(() => {
-    // Display loading screen for 2 seconds, then start fading out
-    const displayTimer = setTimeout(() => {
+    // Reveal gems one by one
+    const gemTimers = gems.map((gem) => {
+      return setTimeout(() => {
+        setRevealedGems(prev => [...prev, gem.id]);
+      }, gem.delay);
+    });
+    
+    // Start fading out after all gems are shown
+    const fadeOutTimer = setTimeout(() => {
       setOpacity(0);
-    }, 2000);
-
-    // Complete the loading after fade out animation
-    const completeTimer = setTimeout(() => {
-      onLoadComplete();
     }, 2500);
 
+    // Complete the loading after fade animation
+    const completeTimer = setTimeout(() => {
+      onLoadComplete();
+    }, 3000);
+
     return () => {
-      clearTimeout(displayTimer);
+      gemTimers.forEach(timer => clearTimeout(timer));
+      clearTimeout(fadeOutTimer);
       clearTimeout(completeTimer);
     };
-  }, [onLoadComplete]);
+  }, [onLoadComplete, gems]);
 
   return (
     <div 
-      className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center"
+      className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center"
       style={{ 
         opacity, 
         transition: 'opacity 0.5s ease-in-out',
         pointerEvents: opacity === 0 ? 'none' : 'auto'
       }}
     >
+      <div className="relative w-64 h-64 md:w-80 md:h-80">
+        {/* Gems from the provided image */}
+        {gems.map((gem) => (
+          <div
+            key={gem.id}
+            className="absolute transition-opacity duration-500"
+            style={{
+              top: gem.top,
+              left: gem.left,
+              width: gem.size,
+              height: gem.size,
+              opacity: revealedGems.includes(gem.id) ? 1 : 0,
+              transform: 'translate(-50%, -50%)',
+              overflow: 'hidden'
+            }}
+          >
+            <div
+              style={{
+                backgroundImage: `url('/lovable-uploads/0bff3816-bcb3-4cc2-a892-df23dd2670b3.png')`,
+                backgroundSize: '800px 800px',
+                backgroundPosition: 'center',
+                width: '100%',
+                height: '100%',
+              }}
+            />
+          </div>
+        ))}
+      </div>
+      
+      {/* Kobler Logo below the gems */}
       <img 
         src="/lovable-uploads/2527bd09-b43e-468c-9deb-c5ce7d3b2967.png" 
         alt="Kobler Logo" 
-        className="h-16 md:h-24 mb-8"
+        className="h-12 md:h-16 mt-8"
+        style={{
+          opacity: revealedGems.length > gems.length / 2 ? 1 : 0,
+          transition: 'opacity 0.5s ease-in-out',
+        }}
       />
-      <div className="mt-8 relative">
-        <div className="h-[1px] w-24 md:w-32 bg-black/30 overflow-hidden">
-          <div className="h-full bg-black w-1/2 animate-[loading_1.5s_ease-in-out_infinite]"></div>
-        </div>
-      </div>
     </div>
   );
 };

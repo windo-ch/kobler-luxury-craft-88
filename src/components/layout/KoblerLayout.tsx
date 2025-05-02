@@ -11,6 +11,15 @@ const KoblerLayout = () => {
   
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Check if loading has already been shown in this session
+    const loadingShown = window.sessionStorage.getItem('loadingShown');
+    if (loadingShown === 'true' && pathname !== '/') {
+      setIsLoading(false);
+    } else {
+      // Mark loading as shown to prevent showing it again
+      window.sessionStorage.setItem('loadingShown', 'true');
+    }
   }, [pathname]);
 
   const handleLoadComplete = () => {
