@@ -11,6 +11,7 @@ import Creations from "./pages/Creations";
 import Journal from "./pages/Journal";
 import JournalRubyStory from "./pages/JournalRubyStory";
 import Contact from "./pages/Contact";
+import Perlen from "./pages/Perlen";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/journal" element={<Journal />} />
           <Route path="/journal/journey-of-a-ruby" element={<JournalRubyStory />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/perlen" element={<Perlen />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

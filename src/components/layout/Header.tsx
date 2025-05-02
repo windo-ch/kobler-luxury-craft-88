@@ -50,6 +50,10 @@ const Header = () => {
       url: "/services",
     },
     {
+      title: currentLanguage === "de" ? "Perlen" : "Pearls",
+      url: "/perlen",
+    },
+    {
       title: currentLanguage === "de" ? "Kreationen" : "Creations",
       url: "/creations",
     },
