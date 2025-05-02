@@ -1,126 +1,120 @@
 
-import type { Config } from "tailwindcss";
+/** @type {import('tailwindcss').Config} */
+import { type Config } from "tailwindcss";
+import { fontFamily } from "tailwindcss/defaultTheme";
+import plugin from "tailwindcss/plugin";
 
 export default {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
   prefix: "",
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: "2rem",
       screens: {
-        'sm': '640px',
-        'md': '768px',
-        'lg': '1024px',
-        'xl': '1280px',
-        '2xl': '1400px'
-      }
+        "2xl": "1400px",
+      },
     },
     extend: {
+      fontFamily: {
+        sans: ["Montserrat", ...fontFamily.sans],
+        serif: ["Playfair Display", ...fontFamily.serif],
+      },
       colors: {
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
+        border: "hsl(0 0% 0% / 0.1)",
+        input: "hsl(0 0% 0% / 0.2)",
+        ring: "hsl(0 0% 0%)",
+        background: "hsl(0 0% 100%)",
+        foreground: "hsl(0 0% 0%)",
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))'
+          DEFAULT: "hsl(0 0% 0%)",
+          foreground: "hsl(0 0% 100%)",
         },
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))'
+          DEFAULT: "hsl(0 0% 96%)",
+          foreground: "hsl(0 0% 0%)",
         },
         destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))'
+          DEFAULT: "hsl(0 0% 0%)",
+          foreground: "hsl(0 0% 100%)",
         },
         muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))'
+          DEFAULT: "hsl(0 0% 96%)",
+          foreground: "hsl(0 0% 40%)",
         },
         accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))'
+          DEFAULT: "hsl(0 0% 96%)",
+          foreground: "hsl(0 0% 0%)",
         },
         popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))'
+          DEFAULT: "hsl(0 0% 100%)",
+          foreground: "hsl(0 0% 0%)",
         },
         card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))'
+          DEFAULT: "hsl(0 0% 100%)",
+          foreground: "hsl(0 0% 0%)",
         },
-        // Luxury brand colors
-        luxury: {
-          navy: '#0A1F44',
-          charcoal: '#403E43',
-          cream: '#F5F5F0',
-          gold: '#D4AF37',
-          silver: '#C0C0C0',
-          dark: '#222222',
-          light: '#F1F1F1',
-        }
       },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)'
-      },
-      fontFamily: {
-        'playfair': ['Playfair Display', 'serif'],
-        'montserrat': ['Montserrat', 'sans-serif'],
+        lg: "0.5rem",
+        md: "calc(0.5rem - 2px)",
+        sm: "calc(0.5rem - 4px)",
       },
       keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' }
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' }
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
-        'fade-in': {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' }
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
         },
-        'fade-up': {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' }
+        "fade-out": {
+          "0%": { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "0", transform: "translateY(10px)" }
         },
-        'ken-burns': {
-          '0%': { transform: 'scale(1) translate(0px, 0px)' },
-          '50%': { transform: 'scale(1.05) translate(-5px, -5px)' },
-          '100%': { transform: 'scale(1) translate(0px, 0px)' }
-        },
-        'pulse': {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.5' }
-        },
-        'shimmer': {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' }
-        }
       },
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-        'fade-in': 'fade-in 0.5s ease-out',
-        'fade-up': 'fade-up 0.7s ease-out',
-        'ken-burns': 'ken-burns 10s ease-in-out infinite',
-        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'shimmer': 'shimmer 2.5s infinite linear'
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.5s ease-out",
       },
-      transitionDuration: {
-        '3000': '3000ms',
-      }
-    }
+    },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+  plugins: [
+    require("tailwindcss-animate"),
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        ".hover-underline": {
+          position: "relative",
+          "&::after": {
+            content: '""',
+            position: "absolute",
+            width: "100%",
+            transform: "scaleX(0)",
+            height: "1px",
+            bottom: "-2px",
+            left: "0",
+            backgroundColor: "currentColor",
+            transformOrigin: "bottom right",
+            transition: "transform 0.25s ease-out",
+          },
+          "&:hover::after": {
+            transform: "scaleX(1)",
+            transformOrigin: "bottom left",
+          },
+        },
+      });
+    }),
+  ],
+} satisfies Config

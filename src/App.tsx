@@ -1,42 +1,36 @@
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import KoblerLayout from "./components/layout/KoblerLayout";
 import Index from "./pages/Index";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Services from "./pages/Services";
-import Creations from "./pages/Creations";
 import Journal from "./pages/Journal";
 import JournalRubyStory from "./pages/JournalRubyStory";
-import Contact from "./pages/Contact";
+import Creations from "./pages/Creations";
 import Perlen from "./pages/Perlen";
 import NotFound from "./pages/NotFound";
+import "./App.css";
 
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/creations" element={<Creations />} />
-          <Route path="/journal" element={<Journal />} />
-          <Route path="/journal/journey-of-a-ruby" element={<JournalRubyStory />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/perlen" element={<Perlen />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<KoblerLayout />}>
+          <Route index element={<Index />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="services" element={<Services />} />
+          <Route path="journal" element={<Journal />} />
+          <Route path="journal/ruby-story" element={<JournalRubyStory />} />
+          <Route path="collections" element={<Creations />} />
+          <Route path="perlen" element={<Perlen />} />
           <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+        </Route>
+      </Routes>
+    </Router>
+  );
+}
 
 export default App;
