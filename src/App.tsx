@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Creations from "./pages/Creations";
 import Journal from "./pages/Journal";
+import JournalRubyStory from "./pages/JournalRubyStory";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/creations" element={<Creations />} />
           <Route path="/journal" element={<Journal />} />
+          <Route path="/journal/journey-of-a-ruby" element={<JournalRubyStory />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

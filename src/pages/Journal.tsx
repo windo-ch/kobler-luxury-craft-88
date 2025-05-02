@@ -1,4 +1,6 @@
+
 import React from "react";
+import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import SectionTitle from "../components/ui/SectionTitle";
 import Button from "../components/ui/Button";
@@ -6,12 +8,13 @@ import Button from "../components/ui/Button";
 const journal = [
   {
     id: 1,
-    title: "Die Kunst der Uhrmacherei: Vom Uhrwerk zum Meisterwerk",
+    title: "Journey of a Ruby: Der Weg eines aussergewöhnlichen 22-karatigen Rubins",
     excerpt:
-      "Entdecken Sie die komplexe Welt der mechanischen Uhren und erfahren Sie, wie Uhrmachermeister präzise Komponenten in horologische Meisterwerke verwandeln.",
-    image: "https://images.unsplash.com/photo-1495363156252-73026d44c868?q=80&w=2070&auto=format&fit=crop",
-    date: "15. April 2025",
-    category: "Uhren"
+      "Verfolgen Sie die faszinierende Reise eines seltenen 22-karatigen Rubins von Bangkok bis in unser Atelier in Zug. Eine Geschichte von Handwerkskunst, Tradition und aussergewöhnlichem Design.",
+    image: "https://goldschmied-uhrmacher.ch/wp-content/uploads/2024/08/rubycleaned-scaled.jpg",
+    date: "30. August 2024",
+    category: "Edelsteine",
+    slug: "journey-of-a-ruby"
   },
   {
     id: 2,
@@ -105,7 +108,10 @@ const Journal = () => {
                 <p className="text-luxury-charcoal/80 text-sm mb-4">
                   {entry.excerpt}
                 </p>
-                <span className="inline-block text-sm text-luxury-gold font-medium transition-all duration-300 group-hover:translate-x-2">
+                <Link 
+                  to={entry.slug ? `/journal/${entry.slug}` : "#"} 
+                  className="inline-block text-sm text-luxury-gold font-medium transition-all duration-300 group-hover:translate-x-2"
+                >
                   Weiterlesen
                   <svg
                     className="inline-block ml-1 w-5 h-5"
@@ -121,7 +127,7 @@ const Journal = () => {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </span>
+                </Link>
               </article>
             ))}
           </div>
