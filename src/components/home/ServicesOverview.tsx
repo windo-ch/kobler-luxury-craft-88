@@ -2,26 +2,32 @@
 import React from "react";
 import SectionTitle from "../ui/SectionTitle";
 import Button from "../ui/Button";
-import { Clock, Gem, Watch } from "lucide-react";
+import { Watch, Diamond, Hammer, Scale } from "lucide-react";
 
 const services = [
   {
-    title: "Fine Watches",
-    description: "Discover our collection of precision timepieces from renowned brands or explore our bespoke watch creation services.",
+    title: "Gold- und Silberschmied",
+    description: "Anfertigungen, Reparaturen, Umarbeitungen und Verkauf von feinen Schmuckstücken.",
+    icon: <Hammer className="w-12 h-12 text-luxury-gold" />,
+    link: "/services#goldsmith"
+  },
+  {
+    title: "Gemmologe / Steinschleifer",
+    description: "Analysieren, Polieren, Umschleifen, Verkauf und Zertifizieren von Edelsteinen.",
+    icon: <Diamond className="w-12 h-12 text-luxury-gold" />,
+    link: "/services#gemologist"
+  },
+  {
+    title: "Uhrmacher / Pendulier",
+    description: "Bandwechsel, Batteriewechsel, Reparaturen, Restaurationen und Verkauf von Uhren.",
     icon: <Watch className="w-12 h-12 text-luxury-gold" />,
-    link: "/services#watches"
+    link: "/services#watchmaker"
   },
   {
-    title: "Jewelry & Gemstones",
-    description: "From elegant engagement rings to statement necklaces, our jewelry selection showcases the finest craftsmanship and materials.",
-    icon: <Gem className="w-12 h-12 text-luxury-gold" />,
-    link: "/services#jewelry"
-  },
-  {
-    title: "Expert Repairs",
-    description: "Our master watchmakers and goldsmiths provide meticulous repair and restoration services for your treasured timepieces and jewelry.",
-    icon: <Clock className="w-12 h-12 text-luxury-gold" />,
-    link: "/services#repairs"
+    title: "Schätzungen",
+    description: "Versicherungswert, Erbteilungswert, Handelswert und Liquidationswert für Ihre Wertsachen.",
+    icon: <Scale className="w-12 h-12 text-luxury-gold" />,
+    link: "/services#appraisals"
   },
 ];
 
@@ -31,11 +37,11 @@ const ServicesOverview = () => {
       <div className="luxury-container">
         <SectionTitle
           title="Our Services"
-          subtitle="We offer a comprehensive range of services tailored to meet your luxury watch and jewelry needs."
+          subtitle="Wir bieten Ihnen ein umfassendes Angebot an Dienstleistungen für Ihre Uhren, Schmuck und Edelsteine."
           centered
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {services.map((service, index) => (
             <div 
               key={index} 

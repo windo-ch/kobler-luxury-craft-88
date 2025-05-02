@@ -1,43 +1,36 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Watch, Diamond, Hammer, Scale, HandCoins } from "lucide-react";
+import { Diamond, Watch, Hammer, Scale } from "lucide-react";
 
 const services = [
   {
     id: 1,
-    title: "Fine Watch Sales",
-    description: "Discover our curated collection of prestigious timepieces from renowned Swiss manufacturers.",
-    icon: Watch,
-    link: "/services#watches"
+    title: "Gold- und Silberschmied",
+    description: "Anfertigungen, Reparaturen, Umarbeitungen und Verkauf von feinen Schmuckstücken.",
+    icon: Hammer,
+    link: "/services#goldsmith"
   },
   {
     id: 2,
-    title: "Jewelry & Gemstone Sales",
-    description: "Explore our selection of exquisite jewelry and rare gemstones, each piece selected for its exceptional quality.",
+    title: "Gemmologe / Steinschleifer",
+    description: "Analysieren, Polieren, Umschleifen, Verkauf und Zertifizieren von Edelsteinen.",
     icon: Diamond,
-    link: "/services#jewelry"
+    link: "/services#gemologist"
   },
   {
     id: 3,
-    title: "Expert Repairs",
-    description: "Trust our master watchmakers and jewelers to restore your precious pieces with unparalleled expertise.",
-    icon: Hammer,
-    link: "/services#repairs"
+    title: "Uhrmacher / Pendulier",
+    description: "Bandwechsel, Batteriewechsel, Reparaturen, Restaurationen und Verkauf von Uhren.",
+    icon: Watch,
+    link: "/services#watchmaker"
   },
   {
     id: 4,
-    title: "Appraisals & Valuations",
-    description: "Receive professional assessments of your timepieces and jewelry from our certified experts.",
+    title: "Schätzungen",
+    description: "Versicherungswert, Erbteilungswert, Handelswert und Liquidationswert für Ihre Wertsachen.",
     icon: Scale,
     link: "/services#appraisals"
-  },
-  {
-    id: 5,
-    title: "Bespoke Designs",
-    description: "Commission unique, personalized creations crafted to your exact specifications by our master artisans.",
-    icon: HandCoins,
-    link: "/services#bespoke"
   }
 ];
 
@@ -48,11 +41,11 @@ const KoblerServicesOverview = () => {
         <div className="text-center mb-16">
           <h2 className="heading-lg mb-6">Our Services</h2>
           <p className="body-md max-w-2xl mx-auto text-black/80">
-            From expert repairs to bespoke creations, our master craftsmen provide a comprehensive range of services.
+            Von meisterhaften Reparaturen bis hin zu exklusiven Kreationen bieten unsere Handwerker ein umfassendes Dienstleistungsspektrum.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-8 gap-y-16">
           {services.map((service) => (
             <Link 
               key={service.id} 
