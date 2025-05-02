@@ -1,6 +1,5 @@
 
 import React from "react";
-import Layout from "@/components/layout/Layout";
 
 // Pearl page sections
 import PearlsHero from "@/components/pearls/PearlsHero";
@@ -13,7 +12,7 @@ import Newsletter from "@/components/common/Newsletter";
 
 const Perlen = () => {
   return (
-    <Layout>
+    <>
       <PearlsHero />
       <PearlsIntro />
       <PearlsTypes />
@@ -21,7 +20,7 @@ const Perlen = () => {
       <PearlsQuality />
       <PearlsGallery />
       <Newsletter />
-    </Layout>
+    </>
   );
 };
 

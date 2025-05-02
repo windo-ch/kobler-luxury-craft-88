@@ -42,6 +42,7 @@ const KoblerHeader = () => {
         <nav className="hidden lg:flex items-center space-x-12">
           <Link to="/collections" className="text-sm uppercase tracking-wide hover-underline">Collections</Link>
           <Link to="/services" className="text-sm uppercase tracking-wide hover-underline">Services</Link>
+          <Link to="/perlen" className="text-sm uppercase tracking-wide hover-underline">Perlen</Link>
           <Link to="/about" className="text-sm uppercase tracking-wide hover-underline">About</Link>
           <Link to="/journal" className="text-sm uppercase tracking-wide hover-underline">Journal</Link>
           <Link to="/contact" className="text-sm uppercase tracking-wide hover-underline">Contact</Link>
@@ -118,6 +119,13 @@ const KoblerHeader = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Services
+            </Link>
+            <Link 
+              to="/perlen"
+              className="text-xl font-serif"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Perlen
             </Link>
             <Link 
               to="/about"
