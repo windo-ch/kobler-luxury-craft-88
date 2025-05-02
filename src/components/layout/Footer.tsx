@@ -9,24 +9,26 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1 - Logo and Description */}
           <div className="space-y-4">
-            <img 
-              src="/lovable-uploads/e0ebbeb8-a995-43ce-9d8d-d315af3ebb77.png" 
-              alt="KOBLER ZUG" 
-              className="h-10 w-auto object-contain brightness-0 invert" // Inverting to make black logo white
-            />
+            <div className="h-10 w-auto aspect-auto relative">
+              <img 
+                src="/lovable-uploads/e0ebbeb8-a995-43ce-9d8d-d315af3ebb77.png" 
+                alt="KOBLER ZUG" 
+                className="h-full w-auto object-contain brightness-0 invert max-w-none" // Inverting to make black logo white
+              />
+            </div>
             <p className="text-sm text-luxury-light/80 mt-4">
               Feinste Uhren, Edelsteine und Schmuck in Zug, Schweiz.
               Verbindung von Tradition mit modernem Fachwissen seit der Gründung.
             </p>
           </div>
 
-          {/* Column 2 - Quick Links - Removed "Startseite" */}
+          {/* Column 2 - Quick Links - Updated "Über Uns" to "Geschichte" */}
           <div>
             <h4 className="text-lg font-playfair mb-4 text-luxury-gold">Navigation</h4>
             <ul className="space-y-2">
               <li>
                 <Link to="/about" className="text-sm text-luxury-light/80 hover:text-luxury-gold hover:underline transition-colors">
-                  Über Uns
+                  Geschichte
                 </Link>
               </li>
               <li>
