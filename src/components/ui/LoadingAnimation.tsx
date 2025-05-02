@@ -18,16 +18,16 @@ const LoadingAnimation = () => {
       setTimeout(() => {
         path.style.transition = 'stroke-dashoffset 1.5s ease-in-out';
         path.style.strokeDashoffset = '0';
-      }, index * 300);
+      }, index * 200);
     });
     
     // Final reveal animation after all paths are drawn
-    const totalDelay = (pathRefs.current.length * 300) + 500;
+    const totalDelay = (pathRefs.current.length * 200) + 500;
     
     setTimeout(() => {
       pathRefs.current.forEach((path) => {
         if (!path) return;
-        path.style.fill = 'currentColor';
+        path.style.fill = '#000000';
         path.style.transition = 'fill 0.5s ease-in-out';
       });
     }, totalDelay);
@@ -39,89 +39,107 @@ const LoadingAnimation = () => {
       <svg 
         width="300" 
         height="150" 
-        viewBox="0 0 600 300" 
-        xmlns="http://www.w3.org/2000/svg" 
-        className="text-luxury-gold"
+        viewBox="0 0 800 400" 
+        xmlns="http://www.w3.org/2000/svg"
+        className="bg-white"
       >
         {/* K */}
         <path
           ref={(el) => (pathRefs.current[0] = el)}
-          d="M30,30 L30,170 M30,100 L80,30 M30,100 L80,170"
-          stroke="currentColor"
-          strokeWidth="8"
+          d="M14,25 L14,170 M50,25 L14,90 L60,170"
+          stroke="#000000"
+          strokeWidth="10"
           fill="transparent"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         
         {/* O */}
         <path
           ref={(el) => (pathRefs.current[1] = el)}
-          d="M120,30 C145,30 170,55 170,100 C170,145 145,170 120,170 C95,170 70,145 70,100 C70,55 95,30 120,30 Z"
-          stroke="currentColor"
-          strokeWidth="8"
+          d="M120,25 C160,25 185,55 185,95 C185,140 155,170 120,170 C85,170 55,140 55,95 C55,55 80,25 120,25 Z"
+          stroke="#000000"
+          strokeWidth="10"
           fill="transparent"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         
         {/* B */}
         <path
           ref={(el) => (pathRefs.current[2] = el)}
-          d="M190,30 L190,170 M190,30 L230,30 C250,30 260,45 260,60 C260,80 245,90 230,90 M190,90 L230,90 C255,90 270,110 270,130 C270,155 250,170 230,170 L190,170"
-          stroke="currentColor"
-          strokeWidth="8"
+          d="M200,25 L200,170 M200,25 Q250,25 250,60 Q250,95 200,95 M200,95 Q260,95 260,135 Q260,170 200,170"
+          stroke="#000000"
+          strokeWidth="10"
           fill="transparent"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         
         {/* L */}
         <path
           ref={(el) => (pathRefs.current[3] = el)}
-          d="M290,30 L290,170 L340,170"
-          stroke="currentColor"
-          strokeWidth="8"
+          d="M275,25 L275,170 L330,170"
+          stroke="#000000"
+          strokeWidth="10"
           fill="transparent"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         
         {/* E */}
         <path
           ref={(el) => (pathRefs.current[4] = el)}
-          d="M420,30 L360,30 L360,170 L420,170 M360,100 L410,100"
-          stroke="currentColor"
-          strokeWidth="8"
+          d="M410,25 L345,25 L345,170 L410,170 M345,95 L390,95"
+          stroke="#000000"
+          strokeWidth="10"
           fill="transparent"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         
         {/* R */}
         <path
           ref={(el) => (pathRefs.current[5] = el)}
-          d="M440,30 L440,170 M440,30 L480,30 C500,30 520,45 520,70 C520,95 500,110 480,110 L440,110 M480,110 L520,170"
-          stroke="currentColor"
-          strokeWidth="8"
+          d="M425,25 L425,170 M425,25 Q470,25 470,60 Q470,95 425,95 M445,95 L480,170"
+          stroke="#000000"
+          strokeWidth="10"
           fill="transparent"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         
         {/* Z */}
         <path
           ref={(el) => (pathRefs.current[6] = el)}
-          d="M120,200 L170,200 L120,270 L170,270"
-          stroke="currentColor"
-          strokeWidth="8"
+          d="M100,240 L180,240 L100,320 L180,320"
+          stroke="#000000"
+          strokeWidth="10"
           fill="transparent"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         
         {/* U */}
         <path
           ref={(el) => (pathRefs.current[7] = el)}
-          d="M190,200 L190,250 C190,270 210,270 220,270 C230,270 250,270 250,250 L250,200"
-          stroke="currentColor"
-          strokeWidth="8"
+          d="M200,240 L200,300 Q200,320 225,320 Q250,320 250,300 L250,240"
+          stroke="#000000"
+          strokeWidth="10"
           fill="transparent"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         
         {/* G */}
         <path
           ref={(el) => (pathRefs.current[8] = el)}
-          d="M320,200 C295,200 270,225 270,235 C270,255 295,270 320,270 C345,270 360,255 360,235 L360,235 L330,235 M360,235 L360,200"
-          stroke="currentColor"
-          strokeWidth="8"
+          d="M330,240 C290,240 270,260 270,280 C270,300 290,320 330,320 C370,320 390,300 390,280 L390,275 L330,275"
+          stroke="#000000"
+          strokeWidth="10"
           fill="transparent"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </div>

@@ -12,7 +12,7 @@ const LoadingScreen = ({ isLoading }: LoadingScreenProps) => {
   return (
     <div className="fixed inset-0 bg-white z-[100] flex flex-col justify-center items-center">
       <LoadingAnimation />
-      <p className="mt-4 font-playfair text-luxury-charcoal animate-pulse">Lädt...</p>
+      <p className="mt-4 font-playfair text-black animate-pulse">Lädt...</p>
     </div>
   );
 };
