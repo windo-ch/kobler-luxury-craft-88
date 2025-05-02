@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -97,6 +98,14 @@ export default {
           '0%': { transform: 'scale(1) translate(0px, 0px)' },
           '50%': { transform: 'scale(1.05) translate(-5px, -5px)' },
           '100%': { transform: 'scale(1) translate(0px, 0px)' }
+        },
+        'pulse': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.5' }
+        },
+        'shimmer': {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' }
         }
       },
       animation: {
@@ -104,7 +113,12 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'fade-in': 'fade-in 0.5s ease-out',
         'fade-up': 'fade-up 0.7s ease-out',
-        'ken-burns': 'ken-burns 10s ease-in-out infinite'
+        'ken-burns': 'ken-burns 10s ease-in-out infinite',
+        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'shimmer': 'shimmer 2.5s infinite linear'
+      },
+      transitionDuration: {
+        '3000': '3000ms',
       }
     }
   },
