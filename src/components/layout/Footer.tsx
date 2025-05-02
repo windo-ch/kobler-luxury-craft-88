@@ -12,7 +12,7 @@ const Footer = () => {
             <img 
               src="/lovable-uploads/e0ebbeb8-a995-43ce-9d8d-d315af3ebb77.png" 
               alt="KOBLER ZUG" 
-              className="h-10 brightness-0 invert" // Inverting to make black logo white
+              className="h-10 w-auto object-contain brightness-0 invert" // Inverting to make black logo white
             />
             <p className="text-sm text-luxury-light/80 mt-4">
               Feinste Uhren, Edelsteine und Schmuck in Zug, Schweiz.
@@ -20,15 +20,10 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Column 2 - Quick Links */}
+          {/* Column 2 - Quick Links - Removed "Startseite" */}
           <div>
             <h4 className="text-lg font-playfair mb-4 text-luxury-gold">Navigation</h4>
             <ul className="space-y-2">
-              <li>
-                <Link to="/" className="text-sm text-luxury-light/80 hover:text-luxury-gold hover:underline transition-colors">
-                  Startseite
-                </Link>
-              </li>
               <li>
                 <Link to="/about" className="text-sm text-luxury-light/80 hover:text-luxury-gold hover:underline transition-colors">
                   Über Uns
