@@ -9,12 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1 - Logo and Description */}
           <div className="space-y-4">
-            <h3 className="text-xl font-playfair font-bold text-white">
-              KOBLER
-              <span className="block text-xs font-montserrat font-light tracking-wider text-luxury-silver mt-1">
-                GOLDSCHMIED & UHRMACHER AG
-              </span>
-            </h3>
+            <img 
+              src="/lovable-uploads/e0ebbeb8-a995-43ce-9d8d-d315af3ebb77.png" 
+              alt="KOBLER ZUG" 
+              className="h-10 brightness-0 invert" // Inverting to make black logo white
+            />
             <p className="text-sm text-luxury-light/80 mt-4">
               Feinste Uhren, Edelsteine und Schmuck in Zug, Schweiz.
               Verbindung von Tradition mit modernem Fachwissen seit der Gründung.

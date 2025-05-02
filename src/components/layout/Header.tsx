@@ -40,12 +40,11 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <h1 className="text-xl md:text-2xl font-playfair font-bold text-luxury-navy">
-              KOBLER
-              <span className="block text-xs md:text-sm font-montserrat font-light tracking-wider text-luxury-charcoal">
-                GOLDSCHMIED & UHRMACHER AG
-              </span>
-            </h1>
+            <img 
+              src="/lovable-uploads/e0ebbeb8-a995-43ce-9d8d-d315af3ebb77.png" 
+              alt="KOBLER ZUG" 
+              className="h-8 md:h-10" 
+            />
           </Link>
 
           {/* Desktop Navigation */}
