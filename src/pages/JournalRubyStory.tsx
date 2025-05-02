@@ -1,6 +1,5 @@
 
 import React from "react";
-import Layout from "../components/layout/Layout";
 import RubyStoryHero from "../components/journal/RubyStoryHero";
 import RubyStoryHeader from "../components/journal/RubyStoryHeader";
 import RubyStoryContent from "../components/journal/RubyStoryContent";
@@ -9,13 +8,13 @@ import CallToAction from "../components/journal/CallToAction";
 
 const JournalRubyStory = () => {
   return (
-    <Layout>
+    <>
       {/* Hero Section */}
       <RubyStoryHero />
 
       {/* Main Content */}
       <article className="bg-white py-16">
-        <div className="luxury-container">
+        <div className="container-lg">
           <div className="max-w-4xl mx-auto">
             {/* Article Header */}
             <RubyStoryHeader />
@@ -31,7 +30,7 @@ const JournalRubyStory = () => {
 
       {/* CTAs */}
       <CallToAction />
-    </Layout>
+    </>
   );
 };
 

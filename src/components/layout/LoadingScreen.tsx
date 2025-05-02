@@ -9,15 +9,15 @@ const LoadingScreen = ({ onLoadComplete }: LoadingScreenProps) => {
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
-    // Display loading screen for 2.5 seconds, then start fading out
+    // Display loading screen for 2 seconds, then start fading out
     const displayTimer = setTimeout(() => {
       setOpacity(0);
-    }, 2500);
+    }, 2000);
 
-    // Complete the loading after fade out animation (total 3 seconds)
+    // Complete the loading after fade out animation
     const completeTimer = setTimeout(() => {
       onLoadComplete();
-    }, 3000);
+    }, 2500);
 
     return () => {
       clearTimeout(displayTimer);
@@ -30,18 +30,19 @@ const LoadingScreen = ({ onLoadComplete }: LoadingScreenProps) => {
       className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center"
       style={{ 
         opacity, 
-        transition: 'opacity 0.5s ease-in-out'
+        transition: 'opacity 0.5s ease-in-out',
+        pointerEvents: opacity === 0 ? 'none' : 'auto'
       }}
     >
-      <div className="relative">
-        <img 
-          src="/lovable-uploads/79756af4-30d5-4cb6-ba62-65f033d62b53.png" 
-          alt="Kobler Zug Logo" 
-          className="w-64 md:w-80 mb-6 animate-pulse duration-3000"
-        />
-      </div>
-      <div className="mt-16 relative">
-        <div className="h-[1px] w-16 md:w-24 bg-gradient-to-r from-transparent via-luxury-gold to-transparent animate-pulse"></div>
+      <img 
+        src="/lovable-uploads/2527bd09-b43e-468c-9deb-c5ce7d3b2967.png" 
+        alt="Kobler Logo" 
+        className="h-16 md:h-24 mb-8"
+      />
+      <div className="mt-8 relative">
+        <div className="h-[1px] w-24 md:w-32 bg-black/30 overflow-hidden">
+          <div className="h-full bg-black w-1/2 animate-[loading_1.5s_ease-in-out_infinite]"></div>
+        </div>
       </div>
     </div>
   );

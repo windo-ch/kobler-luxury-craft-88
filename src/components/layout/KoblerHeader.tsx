@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import LanguageSwitcher from "./LanguageSwitcher";
 import { Search } from "lucide-react";
 
 const KoblerHeader = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState<"de" | "en">("de");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +18,10 @@ const KoblerHeader = () => {
     };
   }, []);
 
+  const switchLanguage = (lang: "de" | "en") => {
+    setCurrentLanguage(lang);
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -27,7 +31,11 @@ const KoblerHeader = () => {
       <div className="container-lg flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="z-50">
-          <h1 className="font-serif text-xl md:text-2xl tracking-tight">KOBLER</h1>
+          <img 
+            src="/lovable-uploads/2527bd09-b43e-468c-9deb-c5ce7d3b2967.png" 
+            alt="KOBLER"
+            className="h-8 md:h-10 w-auto"
+          />
         </Link>
         
         {/* Desktop Navigation */}
@@ -44,7 +52,23 @@ const KoblerHeader = () => {
           <button className="hidden lg:flex">
             <Search size={20} />
           </button>
-          <LanguageSwitcher />
+          
+          {/* Language Switcher */}
+          <div className="hidden lg:flex items-center space-x-2">
+            <button 
+              onClick={() => switchLanguage("de")} 
+              className={`text-xs uppercase ${currentLanguage === "de" ? "font-bold" : "font-medium text-black/70 hover:text-black"}`}
+            >
+              DE
+            </button>
+            <span className="text-xs text-black/50">|</span>
+            <button 
+              onClick={() => switchLanguage("en")} 
+              className={`text-xs uppercase ${currentLanguage === "en" ? "font-bold" : "font-medium text-black/70 hover:text-black"}`}
+            >
+              EN
+            </button>
+          </div>
           
           {/* Mobile Menu Trigger */}
           <button 
@@ -116,6 +140,28 @@ const KoblerHeader = () => {
             >
               Contact
             </Link>
+            
+            {/* Mobile Language Switcher */}
+            <div className="flex space-x-6 pt-6">
+              <button 
+                onClick={() => {
+                  switchLanguage("de");
+                  setMobileMenuOpen(false);
+                }}
+                className={`text-sm uppercase ${currentLanguage === "de" ? "font-bold" : "font-medium text-black/70"}`}
+              >
+                Deutsch
+              </button>
+              <button 
+                onClick={() => {
+                  switchLanguage("en");
+                  setMobileMenuOpen(false);
+                }}
+                className={`text-sm uppercase ${currentLanguage === "en" ? "font-bold" : "font-medium text-black/70"}`}
+              >
+                English
+              </button>
+            </div>
           </nav>
         </div>
       </div>
