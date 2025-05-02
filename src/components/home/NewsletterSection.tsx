@@ -80,7 +80,7 @@ const NewsletterSection = () => {
                   variant="secondary" 
                   size="md" 
                   className={`whitespace-nowrap relative overflow-hidden ${isAnimating ? 'opacity-70 cursor-not-allowed' : ''}`}
-                  onClick={handleSubmit}
+                  onClick={(e) => handleSubmit(e as React.FormEvent)}
                 >
                   {status === "success" ? (
                     <span className="flex items-center gap-2">
