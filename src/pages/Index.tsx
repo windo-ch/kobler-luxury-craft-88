@@ -10,7 +10,7 @@ import NewsletterSection from "../components/home/NewsletterSection";
 
 const Index = () => {
   useEffect(() => {
-    // Add fade-in animation to page sections
+    // Fade-in Animation für Seitenabschnitte hinzufügen
     const sections = document.querySelectorAll('section');
     
     const observer = new IntersectionObserver((entries) => {

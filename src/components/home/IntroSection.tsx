@@ -10,33 +10,33 @@ const IntroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <SectionTitle
-              title="Welcome to Kobler"
-              subtitle="A blend of traditional craftsmanship and contemporary design in the heart of Zug, Switzerland."
+              title="Willkommen bei Kobler"
+              subtitle="Eine Verschmelzung von traditioneller Handwerkskunst und zeitgenössischem Design im Herzen von Zug, Schweiz."
             />
             <div className="prose max-w-none text-luxury-charcoal/80">
               <p className="mb-4">
-                For generations, we have been providing our customers with the finest watches, exquisite jewelry, and carefully selected gemstones. At Kobler Goldschmied & Uhrmacher AG, we combine traditional craftsmanship with modern expertise to create timeless pieces that tell your unique story.
+                Seit Generationen bieten wir unseren Kunden feinste Uhren, exquisiten Schmuck und sorgfältig ausgewählte Edelsteine. Bei Kobler Goldschmied & Uhrmacher AG kombinieren wir traditionelles Handwerk mit modernem Fachwissen, um zeitlose Stücke zu schaffen, die Ihre einzigartige Geschichte erzählen.
               </p>
               <p className="mb-6">
-                Whether you are searching for a luxury timepiece, a bespoke engagement ring, or professional watch repair services, our dedicated team of experts is here to guide you through our collection and provide personalized service.
+                Ob Sie auf der Suche nach einer Luxusuhr, einem maßgeschneiderten Verlobungsring oder professionellen Uhrenreparaturdiensten sind, unser engagiertes Team von Experten steht Ihnen zur Verfügung, um Sie durch unsere Kollektion zu führen und Ihnen einen persönlichen Service zu bieten.
               </p>
             </div>
             <Button to="/about" variant="primary" size="md">
-              Learn More About Us
+              Mehr über uns erfahren
             </Button>
           </div>
           <div className="relative">
             <div className="aspect-square w-full overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1587851650203-6714af86aab4?q=80&w=1948&auto=format&fit=crop"
-                alt="Jewelry craftsmanship"
+                alt="Schmuckhandwerk"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-luxury-gold flex items-center justify-center">
               <div className="text-center text-white">
                 <p className="font-playfair text-3xl font-bold">25+</p>
-                <p className="font-montserrat text-sm uppercase tracking-wider">Years of Experience</p>
+                <p className="font-montserrat text-sm uppercase tracking-wider">Jahre Erfahrung</p>
               </div>
             </div>
           </div>

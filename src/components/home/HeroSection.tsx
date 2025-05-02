@@ -9,7 +9,7 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src="https://images.unsplash.com/photo-1605101100278-5d1deb2b6498?q=80&w=2070&auto=format&fit=crop"
-          alt="Luxury watch craftsmanship"
+          alt="Luxus Uhrmacherkunst"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
@@ -23,17 +23,17 @@ const HeroSection = () => {
               Kobler Goldschmied & Uhrmacher AG
             </h1>
             <p className="text-xl md:text-2xl font-montserrat text-white/90 mb-8">
-              Finest Watches, Gemstones and Jewelry
+              Feinste Uhren, Edelsteine und Schmuck
             </p>
             <p className="text-base md:text-lg text-white/80 mb-8">
-              Experience excellence in watchmaking and jewelry craftsmanship in the heart of Zug, Switzerland.
+              Erleben Sie Exzellenz in der Uhrmacherei und Schmuckkunst im Herzen von Zug, Schweiz.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button to="/creations" variant="secondary" size="lg">
-                Discover Collections
+                Kollektionen Entdecken
               </Button>
               <Button to="/about" variant="outline" size="lg" className="text-white border-white hover:bg-white/10">
-                Our Story
+                Unsere Geschichte
               </Button>
             </div>
           </div>

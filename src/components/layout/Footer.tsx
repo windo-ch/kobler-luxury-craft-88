@@ -16,8 +16,8 @@ const Footer = () => {
               </span>
             </h3>
             <p className="text-sm text-luxury-light/80 mt-4">
-              Finest Watches, Gemstones and Jewelry in Zug, Switzerland. 
-              Combining tradition with modern expertise since establishment.
+              Feinste Uhren, Edelsteine und Schmuck in Zug, Schweiz.
+              Verbindung von Tradition mit modernem Fachwissen seit der Gründung.
             </p>
           </div>
 
@@ -27,22 +27,22 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="text-sm text-luxury-light/80 hover:text-luxury-gold hover:underline transition-colors">
-                  Home
+                  Startseite
                 </Link>
               </li>
               <li>
                 <Link to="/about" className="text-sm text-luxury-light/80 hover:text-luxury-gold hover:underline transition-colors">
-                  About Us
+                  Über Uns
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="text-sm text-luxury-light/80 hover:text-luxury-gold hover:underline transition-colors">
-                  Services
+                  Dienstleistungen
                 </Link>
               </li>
               <li>
                 <Link to="/creations" className="text-sm text-luxury-light/80 hover:text-luxury-gold hover:underline transition-colors">
-                  Our Creations
+                  Unsere Kreationen
                 </Link>
               </li>
               <li>
@@ -52,7 +52,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/contact" className="text-sm text-luxury-light/80 hover:text-luxury-gold hover:underline transition-colors">
-                  Contact
+                  Kontakt
                 </Link>
               </li>
             </ul>
@@ -60,7 +60,7 @@ const Footer = () => {
 
           {/* Column 3 - Contact Information */}
           <div>
-            <h4 className="text-lg font-playfair mb-4 text-luxury-gold">Contact</h4>
+            <h4 className="text-lg font-playfair mb-4 text-luxury-gold">Kontakt</h4>
             <address className="not-italic">
               <p className="text-sm text-luxury-light/80 mb-2">
                 Kobler Goldschmied & Uhrmacher AG
@@ -68,7 +68,7 @@ const Footer = () => {
               <p className="text-sm text-luxury-light/80 mb-2">
                 Neugasse 32<br />
                 6300 Zug<br />
-                Switzerland
+                Schweiz
               </p>
               <p className="text-sm text-luxury-light/80 mb-2">
                 <a href="tel:+41417110633" className="hover:text-luxury-gold transition-colors">
@@ -93,7 +93,7 @@ const Footer = () => {
               <div className="flex flex-col sm:flex-row">
                 <input 
                   type="email" 
-                  placeholder="Email Address" 
+                  placeholder="E-Mail-Adresse" 
                   className="px-4 py-2 text-luxury-charcoal w-full focus:outline-none focus:ring-1 focus:ring-luxury-gold" 
                   required 
                 />
@@ -101,7 +101,7 @@ const Footer = () => {
                   type="submit" 
                   className="bg-luxury-gold text-white px-4 py-2 mt-2 sm:mt-0 hover:bg-luxury-gold/90 transition-colors"
                 >
-                  Subscribe
+                  Abonnieren
                 </button>
               </div>
             </form>
@@ -110,10 +110,10 @@ const Footer = () => {
 
         {/* Bottom bar with copyright and legal links */}
         <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-luxury-light/70">
-          <p>© {new Date().getFullYear()} Kobler Goldschmied & Uhrmacher AG. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Kobler Goldschmied & Uhrmacher AG. Alle Rechte vorbehalten.</p>
           <div className="mt-2 md:mt-0 flex space-x-4">
-            <Link to="/privacy-policy" className="hover:text-luxury-gold transition-colors">Privacy Policy</Link>
-            <Link to="/imprint" className="hover:text-luxury-gold transition-colors">Imprint</Link>
+            <Link to="/privacy-policy" className="hover:text-luxury-gold transition-colors">Datenschutz</Link>
+            <Link to="/imprint" className="hover:text-luxury-gold transition-colors">Impressum</Link>
             <Link to="/sitemap" className="hover:text-luxury-gold transition-colors">Sitemap</Link>
           </div>
         </div>

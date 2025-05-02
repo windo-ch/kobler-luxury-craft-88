@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState<"en" | "de">("en");
+  const [currentLanguage, setCurrentLanguage] = useState<"de" | "en">("de");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +25,7 @@ const Header = () => {
   };
 
   const toggleLanguage = () => {
-    setCurrentLanguage(currentLanguage === "en" ? "de" : "en");
+    setCurrentLanguage(currentLanguage === "de" ? "en" : "de");
   };
 
   return (
@@ -54,37 +54,37 @@ const Header = () => {
               to="/"
               className="font-montserrat text-luxury-charcoal hover:text-luxury-gold transition-colors"
             >
-              {currentLanguage === "en" ? "Home" : "Startseite"}
+              {currentLanguage === "de" ? "Startseite" : "Home"}
             </Link>
             <Link
               to="/about"
               className="font-montserrat text-luxury-charcoal hover:text-luxury-gold transition-colors"
             >
-              {currentLanguage === "en" ? "About Us" : "Über Uns"}
+              {currentLanguage === "de" ? "Über Uns" : "About Us"}
             </Link>
             <Link
               to="/services"
               className="font-montserrat text-luxury-charcoal hover:text-luxury-gold transition-colors"
             >
-              {currentLanguage === "en" ? "Services" : "Dienstleistungen"}
+              {currentLanguage === "de" ? "Dienstleistungen" : "Services"}
             </Link>
             <Link
               to="/creations"
               className="font-montserrat text-luxury-charcoal hover:text-luxury-gold transition-colors"
             >
-              {currentLanguage === "en" ? "Creations" : "Kreationen"}
+              {currentLanguage === "de" ? "Kreationen" : "Creations"}
             </Link>
             <Link
               to="/journal"
               className="font-montserrat text-luxury-charcoal hover:text-luxury-gold transition-colors"
             >
-              {currentLanguage === "en" ? "Journal" : "Journal"}
+              {currentLanguage === "de" ? "Journal" : "Journal"}
             </Link>
             <Link
               to="/contact"
               className="font-montserrat text-luxury-charcoal hover:text-luxury-gold transition-colors"
             >
-              {currentLanguage === "en" ? "Contact" : "Kontakt"}
+              {currentLanguage === "de" ? "Kontakt" : "Contact"}
             </Link>
             
             {/* Language Switcher */}
@@ -92,7 +92,7 @@ const Header = () => {
               onClick={toggleLanguage}
               className="font-montserrat text-sm text-luxury-charcoal hover:text-luxury-gold transition-colors uppercase"
             >
-              {currentLanguage === "en" ? "DE" : "EN"}
+              {currentLanguage === "de" ? "EN" : "DE"}
             </button>
           </nav>
 
@@ -135,42 +135,42 @@ const Header = () => {
               className="font-montserrat text-luxury-charcoal hover:text-luxury-gold transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {currentLanguage === "en" ? "Home" : "Startseite"}
+              {currentLanguage === "de" ? "Startseite" : "Home"}
             </Link>
             <Link
               to="/about"
               className="font-montserrat text-luxury-charcoal hover:text-luxury-gold transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {currentLanguage === "en" ? "About Us" : "Über Uns"}
+              {currentLanguage === "de" ? "Über Uns" : "About Us"}
             </Link>
             <Link
               to="/services"
               className="font-montserrat text-luxury-charcoal hover:text-luxury-gold transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {currentLanguage === "en" ? "Services" : "Dienstleistungen"}
+              {currentLanguage === "de" ? "Dienstleistungen" : "Services"}
             </Link>
             <Link
               to="/creations"
               className="font-montserrat text-luxury-charcoal hover:text-luxury-gold transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {currentLanguage === "en" ? "Creations" : "Kreationen"}
+              {currentLanguage === "de" ? "Kreationen" : "Creations"}
             </Link>
             <Link
               to="/journal"
               className="font-montserrat text-luxury-charcoal hover:text-luxury-gold transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {currentLanguage === "en" ? "Journal" : "Journal"}
+              {currentLanguage === "de" ? "Journal" : "Journal"}
             </Link>
             <Link
               to="/contact"
               className="font-montserrat text-luxury-charcoal hover:text-luxury-gold transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {currentLanguage === "en" ? "Contact" : "Kontakt"}
+              {currentLanguage === "de" ? "Kontakt" : "Contact"}
             </Link>
             
             {/* Language Switcher - Mobile */}
@@ -178,7 +178,7 @@ const Header = () => {
               onClick={toggleLanguage}
               className="font-montserrat text-sm text-left text-luxury-charcoal hover:text-luxury-gold transition-colors uppercase"
             >
-              {currentLanguage === "en" ? "Deutsch" : "English"}
+              {currentLanguage === "de" ? "English" : "Deutsch"}
             </button>
           </nav>
         )}

@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "../components/layout/Layout";
 import SectionTitle from "../components/ui/SectionTitle";
@@ -7,56 +6,56 @@ import Button from "../components/ui/Button";
 const journal = [
   {
     id: 1,
-    title: "The Art of Watchmaking: From Movement to Masterpiece",
+    title: "Die Kunst der Uhrmacherei: Vom Uhrwerk zum Meisterwerk",
     excerpt:
-      "Explore the intricate world of mechanical watches and discover how master watchmakers transform precision components into horological masterpieces.",
+      "Entdecken Sie die komplexe Welt der mechanischen Uhren und erfahren Sie, wie Uhrmachermeister präzise Komponenten in horologische Meisterwerke verwandeln.",
     image: "https://images.unsplash.com/photo-1495363156252-73026d44c868?q=80&w=2070&auto=format&fit=crop",
-    date: "April 15, 2025",
-    category: "Watches"
+    date: "15. April 2025",
+    category: "Uhren"
   },
   {
     id: 2,
-    title: "Gemstone Journey: From Earth to Exquisite Jewelry",
+    title: "Edelsteinreise: Von der Erde zum exquisiten Schmuck",
     excerpt:
-      "Follow the remarkable transformation of precious gemstones from rough minerals deep within the earth to dazzling centerpieces in fine jewelry.",
+      "Verfolgen Sie die bemerkenswerte Transformation von Edelsteinen von rohen Mineralien tief in der Erde zu beeindruckenden Mittelpunkten feinen Schmucks.",
     image: "https://images.unsplash.com/photo-1589818975063-5e627e1aeb85?q=80&w=2070&auto=format&fit=crop",
-    date: "March 22, 2025",
-    category: "Gemstones"
+    date: "22. März 2025",
+    category: "Edelsteine"
   },
   {
     id: 3,
-    title: "The Language of Diamonds: Understanding the Four Cs",
+    title: "Die Sprache der Diamanten: Die vier C verstehen",
     excerpt:
-      "A comprehensive guide to understanding diamond quality through cut, color, clarity, and carat weight—essential knowledge for discerning collectors.",
+      "Ein umfassender Leitfaden zum Verständnis der Diamantqualität durch Schliff, Farbe, Reinheit und Karat – unverzichtbares Wissen für anspruchsvolle Sammler.",
     image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=2070&auto=format&fit=crop",
-    date: "February 10, 2025",
-    category: "Education"
+    date: "10. Februar 2025",
+    category: "Bildung"
   },
   {
     id: 4,
-    title: "Preserving Your Timepiece: Essential Care for Luxury Watches",
+    title: "Pflege Ihrer Zeitmesser: Wesentliche Pflege für Luxusuhren",
     excerpt:
-      "Discover expert tips and techniques for maintaining the beauty and functionality of your luxury watches for generations to come.",
+      "Entdecken Sie Expertentipps und -techniken zur Erhaltung der Schönheit und Funktionalität Ihrer Luxusuhren für kommende Generationen.",
     image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?q=80&w=1974&auto=format&fit=crop",
-    date: "January 28, 2025",
-    category: "Care & Maintenance"
+    date: "28. Januar 2025",
+    category: "Pflege & Wartung"
   },
   {
     id: 5,
-    title: "The Evolution of Engagement Rings Through the Centuries",
+    title: "Die Evolution der Verlobungsringe durch die Jahrhunderte",
     excerpt:
-      "A fascinating journey through the history of engagement rings, from ancient traditions to modern designs and changing symbolism.",
+      "Eine faszinierende Reise durch die Geschichte der Verlobungsringe, von alten Traditionen bis zu modernen Designs und sich wandelnder Symbolik.",
     image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?q=80&w=1974&auto=format&fit=crop",
-    date: "December 12, 2024",
-    category: "Jewelry History"
+    date: "12. Dezember 2024",
+    category: "Schmuckgeschichte"
   },
   {
     id: 6,
-    title: "The Resurgence of Vintage Watches in Modern Collections",
+    title: "Die Wiederbelebung von Vintage-Uhren in modernen Kollektionen",
     excerpt:
-      "Explore the growing trend of vintage-inspired timepieces and why collectors are increasingly drawn to designs with historical significance.",
+      "Erkunden Sie den wachsenden Trend von Vintage-inspirierten Zeitmessern und warum Sammler zunehmend von Designs mit historischer Bedeutung angezogen werden.",
     image: "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?q=80&w=1964&auto=format&fit=crop",
-    date: "November 5, 2024",
+    date: "5. November 2024",
     category: "Trends"
   }
 ];
@@ -70,7 +69,7 @@ const Journal = () => {
           <div className="max-w-3xl mx-auto text-center py-16">
             <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-6">Journal</h1>
             <p className="text-xl text-luxury-light/90">
-              Stories and insights from the world of fine watches and jewelry
+              Geschichten und Einblicke aus der Welt der feinen Uhren und des Schmucks
             </p>
           </div>
         </div>
@@ -107,7 +106,7 @@ const Journal = () => {
                   {entry.excerpt}
                 </p>
                 <span className="inline-block text-sm text-luxury-gold font-medium transition-all duration-300 group-hover:translate-x-2">
-                  Read more
+                  Weiterlesen
                   <svg
                     className="inline-block ml-1 w-5 h-5"
                     fill="none"
@@ -134,24 +133,24 @@ const Journal = () => {
         <div className="luxury-container">
           <div className="max-w-3xl mx-auto text-center">
             <SectionTitle
-              title="Stay Informed"
-              subtitle="Subscribe to our newsletter to receive the latest stories, insights, and announcements from Kobler Goldschmied & Uhrmacher AG."
+              title="Bleiben Sie informiert"
+              subtitle="Abonnieren Sie unseren Newsletter, um die neuesten Geschichten, Einblicke und Ankündigungen von Kobler Goldschmied & Uhrmacher AG zu erhalten."
               centered
             />
             <form className="max-w-lg mx-auto mt-8">
               <div className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="email"
-                  placeholder="Your Email Address"
+                  placeholder="Ihre E-Mail-Adresse"
                   className="flex-grow px-4 py-3 border border-luxury-charcoal/30 focus:outline-none focus:ring-1 focus:ring-luxury-gold"
                   required
                 />
                 <Button variant="secondary" size="md" className="whitespace-nowrap">
-                  Subscribe
+                  Abonnieren
                 </Button>
               </div>
               <p className="text-xs text-luxury-charcoal/60 mt-4">
-                By subscribing, you agree to receive email communications from Kobler Goldschmied & Uhrmacher AG.
+                Mit dem Abonnieren stimmen Sie zu, E-Mail-Kommunikation von Kobler Goldschmied & Uhrmacher AG zu erhalten.
               </p>
             </form>
           </div>

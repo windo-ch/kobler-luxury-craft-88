@@ -6,104 +6,104 @@ import ProductCard from "../components/ui/ProductCard";
 
 const collections = [
   {
-    title: "Watches",
-    description: "Discover our collection of exquisite timepieces, from classic designs to contemporary innovations.",
+    title: "Uhren",
+    description: "Entdecken Sie unsere Kollektion exquisiter Zeitmesser, von klassischen Designs bis hin zu zeitgenössischen Innovationen.",
     items: [
       {
         image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?q=80&w=1974&auto=format&fit=crop",
-        title: "Classic Timepieces",
-        description: "Elegant watches inspired by traditional Swiss design.",
+        title: "Klassische Zeitmesser",
+        description: "Elegante Uhren, inspiriert vom traditionellen Schweizer Design.",
         link: "/creations/classic-timepieces",
-        category: "Watches"
+        category: "Uhren"
       },
       {
         image: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=1974&auto=format&fit=crop",
-        title: "Contemporary Collection",
-        description: "Modern watches that blend innovation with sophistication.",
+        title: "Zeitgenössische Kollektion",
+        description: "Moderne Uhren, die Innovation mit Raffinesse verbinden.",
         link: "/creations/contemporary-collection",
-        category: "Watches"
+        category: "Uhren"
       },
       {
         image: "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?q=80&w=1964&auto=format&fit=crop",
-        title: "Vintage & Rare",
-        description: "Carefully curated vintage timepieces and limited editions.",
+        title: "Vintage & Raritäten",
+        description: "Sorgfältig kuratierte Vintage-Zeitmesser und limitierte Editionen.",
         link: "/creations/vintage-rare",
-        category: "Watches"
+        category: "Uhren"
       },
       {
         image: "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1974&auto=format&fit=crop",
-        title: "Luxury Sports Watches",
-        description: "Precision timepieces designed for the active lifestyle.",
+        title: "Luxus-Sportuhren",
+        description: "Präzisionszeitmesser, entworfen für den aktiven Lebensstil.",
         link: "/creations/sports-watches",
-        category: "Watches"
+        category: "Uhren"
       }
     ]
   },
   {
-    title: "Jewelry",
-    description: "Explore our handcrafted jewelry pieces, showcasing the artistry and expertise of our master goldsmiths.",
+    title: "Schmuck",
+    description: "Entdecken Sie unsere handgefertigten Schmuckstücke, die die Kunstfertigkeit und Expertise unserer Meistergoldschmiede zeigen.",
     items: [
       {
         image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?q=80&w=1974&auto=format&fit=crop",
-        title: "Engagement Rings",
-        description: "Bespoke rings crafted to symbolize your unique love story.",
+        title: "Verlobungsringe",
+        description: "Maßgefertigte Ringe, die Ihre einzigartige Liebesgeschichte symbolisieren.",
         link: "/creations/engagement-rings",
-        category: "Jewelry"
+        category: "Schmuck"
       },
       {
         image: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?q=80&w=1974&auto=format&fit=crop",
-        title: "Necklaces & Pendants",
-        description: "Elegant pieces that add a touch of sophistication to any ensemble.",
+        title: "Halsketten & Anhänger",
+        description: "Elegante Stücke, die jedem Outfit einen Hauch von Raffinesse verleihen.",
         link: "/creations/necklaces",
-        category: "Jewelry"
+        category: "Schmuck"
       },
       {
         image: "https://images.unsplash.com/photo-1612348517532-caf2747bd22e?q=80&w=2070&auto=format&fit=crop",
-        title: "Bracelets & Bangles",
-        description: "Artfully designed wrist pieces that blend tradition with modernity.",
+        title: "Armbänder & Armreifen",
+        description: "Kunstvoll gestaltete Handgelenksstücke, die Tradition mit Moderne verbinden.",
         link: "/creations/bracelets",
-        category: "Jewelry"
+        category: "Schmuck"
       },
       {
         image: "https://images.unsplash.com/photo-1598560917505-59a3ad559071?q=80&w=2080&auto=format&fit=crop",
-        title: "Earrings",
-        description: "From subtle studs to statement pieces, crafted with precision.",
+        title: "Ohrringe",
+        description: "Von subtilen Steckern bis hin zu Statement-Stücken, mit Präzision gefertigt.",
         link: "/creations/earrings",
-        category: "Jewelry"
+        category: "Schmuck"
       }
     ]
   },
   {
-    title: "Gemstones",
-    description: "Discover our selection of premium gemstones, each chosen for its exceptional quality and beauty.",
+    title: "Edelsteine",
+    description: "Entdecken Sie unsere Auswahl an erstklassigen Edelsteinen, jeden ausgewählt für seine außergewöhnliche Qualität und Schönheit.",
     items: [
       {
         image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=2070&auto=format&fit=crop",
-        title: "Diamonds",
-        description: "Expertly selected diamonds of exceptional cut, clarity, and brilliance.",
+        title: "Diamanten",
+        description: "Fachkundig ausgewählte Diamanten von außergewöhnlichem Schliff, Klarheit und Brillanz.",
         link: "/creations/diamonds",
-        category: "Gemstones"
+        category: "Edelsteine"
       },
       {
         image: "https://images.unsplash.com/photo-1598751337485-0215d4c0c44e?q=80&w=2070&auto=format&fit=crop",
-        title: "Colored Gemstones",
-        description: "Vibrant sapphires, rubies, emeralds and other precious stones.",
+        title: "Farbige Edelsteine",
+        description: "Leuchtende Saphire, Rubine, Smaragde und andere kostbare Steine.",
         link: "/creations/colored-gemstones",
-        category: "Gemstones"
+        category: "Edelsteine"
       },
       {
         image: "https://images.unsplash.com/photo-1589818975063-5e627e1aeb85?q=80&w=2070&auto=format&fit=crop",
-        title: "Rare & Unique",
-        description: "Exceptional stones with distinctive characteristics and provenance.",
+        title: "Selten & Einzigartig",
+        description: "Außergewöhnliche Steine mit einzigartigen Eigenschaften und Herkunft.",
         link: "/creations/rare-gemstones",
-        category: "Gemstones"
+        category: "Edelsteine"
       },
       {
         image: "https://images.unsplash.com/photo-1518081204925-082a2decbdb2?q=80&w=1964&auto=format&fit=crop",
-        title: "Investment Grade",
-        description: "Premium gemstones selected for their investment potential.",
+        title: "Investitionsqualität",
+        description: "Premium-Edelsteine, ausgewählt für ihr Anlagepotenzial.",
         link: "/creations/investment-gemstones",
-        category: "Gemstones"
+        category: "Edelsteine"
       }
     ]
   }
@@ -116,9 +116,9 @@ const Creations = () => {
       <div className="relative pt-24 pb-16 bg-luxury-navy text-white">
         <div className="luxury-container">
           <div className="max-w-3xl mx-auto text-center py-16">
-            <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-6">Our Creations</h1>
+            <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-6">Unsere Kreationen</h1>
             <p className="text-xl text-luxury-light/90">
-              Discover our exquisite collections of watches, jewelry, and gemstones
+              Entdecken Sie unsere exquisiten Kollektionen von Uhren, Schmuck und Edelsteinen
             </p>
           </div>
         </div>
@@ -157,20 +157,20 @@ const Creations = () => {
         <div className="luxury-container">
           <div className="max-w-3xl mx-auto text-center">
             <SectionTitle
-              title="Bespoke Creations"
-              subtitle="Let us bring your vision to life with a custom-designed piece that perfectly captures your personal style and preferences."
+              title="Maßgefertigte Kreationen"
+              subtitle="Lassen Sie uns Ihre Vision mit einem maßgeschneiderten Design zum Leben erwecken, das Ihren persönlichen Stil und Ihre Vorlieben perfekt widerspiegelt."
               centered
               light
             />
             <p className="text-luxury-light/90 mt-8 mb-8">
-              Our master craftsmen combine traditional techniques with innovative approaches to create unique pieces that tell your story. From initial concept to final creation, we work closely with you to ensure every detail reflects your vision.
+              Unsere Meisterhandwerker kombinieren traditionelle Techniken mit innovativen Ansätzen, um einzigartige Stücke zu schaffen, die Ihre Geschichte erzählen. Von der ersten Idee bis zur endgültigen Kreation arbeiten wir eng mit Ihnen zusammen, um sicherzustellen, dass jedes Detail Ihre Vision widerspiegelt.
             </p>
             <div className="flex justify-center">
               <a
                 href="/contact"
                 className="bg-luxury-gold text-white px-8 py-3 inline-block font-montserrat font-medium transition-colors hover:bg-luxury-gold/90"
               >
-                Inquire About Custom Creations
+                Anfrage für maßgefertigte Kreationen
               </a>
             </div>
           </div>

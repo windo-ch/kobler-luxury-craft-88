@@ -45,7 +45,7 @@ const NewsletterSection = () => {
             
             <div className="text-center mb-8 pt-4">
               <h2 className="text-3xl md:text-4xl font-playfair text-luxury-navy mb-4">
-                Stay Updated
+                Bleiben Sie auf dem Laufenden
               </h2>
               <p className="text-luxury-charcoal/80 max-w-2xl mx-auto">
                 Melden Sie sich für unseren Newsletter an. Gerne versorgen wir Sie regelmässig mit Angeboten, 
@@ -63,7 +63,7 @@ const NewsletterSection = () => {
                       setEmail(e.target.value);
                       setStatus("idle");
                     }}
-                    placeholder="Your Email Address"
+                    placeholder="Ihre E-Mail-Adresse"
                     className={`w-full px-4 py-3 border transition-all duration-300 focus:outline-none focus:ring-1 
                       ${status === "error" 
                         ? "border-red-500 focus:ring-red-500" 
@@ -80,15 +80,15 @@ const NewsletterSection = () => {
                   variant="secondary" 
                   size="md" 
                   className={`whitespace-nowrap relative overflow-hidden ${isAnimating ? 'opacity-70 cursor-not-allowed' : ''}`}
-                  type="submit"
+                  onClick={isAnimating ? undefined : () => {}}
                 >
                   {status === "success" ? (
                     <span className="flex items-center gap-2">
                       <Check className="w-5 h-5" />
-                      Subscribed
+                      Abonniert
                     </span>
                   ) : (
-                    "Subscribe"
+                    "Abonnieren"
                   )}
                   {isAnimating && (
                     <span className="absolute inset-0 flex items-center justify-center bg-luxury-gold/80">
@@ -101,17 +101,17 @@ const NewsletterSection = () => {
               </div>
               {status === "error" && (
                 <p className="text-xs text-red-500 mt-1 ml-1">
-                  Please enter a valid email address.
+                  Bitte geben Sie eine gültige E-Mail-Adresse ein.
                 </p>
               )}
               <p className="text-xs text-luxury-charcoal/60 mt-4 text-center">
-                By subscribing, you agree to receive email communications from Kobler Goldschmied & Uhrmacher AG.
+                Mit dem Abonnieren stimmen Sie zu, E-Mail-Kommunikation von der Kobler Goldschmied & Uhrmacher AG zu erhalten.
               </p>
             </form>
             
             <div className="mt-8 pt-8 border-t border-luxury-charcoal/10 text-center">
               <p className="text-sm text-luxury-charcoal/70">
-                Already following us? Connect on social media for more updates.
+                Folgen Sie uns bereits? Verbinden Sie sich auf Social Media für weitere Updates.
               </p>
               <div className="flex justify-center gap-4 mt-4">
                 {["facebook", "instagram", "linkedin"].map((platform) => (
