@@ -8,6 +8,7 @@ import Services from "./pages/Services";
 import Journal from "./pages/Journal";
 import JournalRubyStory from "./pages/JournalRubyStory";
 import Creations from "./pages/Creations";
+import Perlen from "./pages/Perlen";
 import NotFound from "./pages/NotFound";
 import "./App.css";
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="journal" element={<Journal />} />
           <Route path="journal/ruby-story" element={<JournalRubyStory />} />
           <Route path="collections" element={<Creations />} />
+          <Route path="perlen" element={<Perlen />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
