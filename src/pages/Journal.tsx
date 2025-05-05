@@ -1,7 +1,5 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
-import Layout from "../components/layout/Layout";
 import SectionTitle from "../components/ui/SectionTitle";
 import Button from "../components/ui/Button";
 
@@ -14,7 +12,7 @@ const journal = [
     image: "https://goldschmied-uhrmacher.ch/wp-content/uploads/2024/08/rubycleaned-scaled.jpg",
     date: "30. August 2024",
     category: "Edelsteine",
-    slug: "journey-of-a-ruby"
+    slug: "ruby-story"
   },
   {
     id: 2,
@@ -65,13 +63,13 @@ const journal = [
 
 const Journal = () => {
   return (
-    <Layout>
+    <div className="pt-20">
       {/* Hero Section */}
-      <div className="relative pt-24 pb-16 bg-luxury-navy text-white">
-        <div className="luxury-container">
+      <div className="relative pt-24 pb-16 bg-black text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center py-16">
-            <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-6">Journal</h1>
-            <p className="text-xl text-luxury-light/90">
+            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Journal</h1>
+            <p className="text-xl text-white/90">
               Geschichten und Einblicke aus der Welt der feinen Uhren und des Schmucks
             </p>
           </div>
@@ -80,8 +78,8 @@ const Journal = () => {
       </div>
 
       {/* Journal Entries */}
-      <section className="section-padding bg-white">
-        <div className="luxury-container">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {journal.map((entry) => (
               <article key={entry.id} className="group mb-8">
@@ -93,24 +91,24 @@ const Journal = () => {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
-                  <div className="absolute top-4 left-4 bg-luxury-navy/80 backdrop-blur-sm text-white text-xs tracking-wider py-1 px-2 font-montserrat uppercase">
+                  <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-sm text-white text-xs tracking-wider py-1 px-2 uppercase">
                     {entry.category}
                   </div>
                 </div>
                 <div className="mb-3">
-                  <span className="text-sm text-luxury-charcoal/60 font-montserrat">
+                  <span className="text-sm text-black/60">
                     {entry.date}
                   </span>
                 </div>
-                <h2 className="text-xl font-playfair font-medium text-luxury-navy mb-2">
+                <h2 className="text-xl font-serif font-medium text-black mb-2">
                   {entry.title}
                 </h2>
-                <p className="text-luxury-charcoal/80 text-sm mb-4">
+                <p className="text-black/80 text-sm mb-4">
                   {entry.excerpt}
                 </p>
                 <Link 
                   to={entry.slug ? `/journal/${entry.slug}` : "#"} 
-                  className="inline-block text-sm text-luxury-gold font-medium transition-all duration-300 group-hover:translate-x-2"
+                  className="inline-block text-sm text-black font-medium transition-all duration-300 group-hover:translate-x-2"
                 >
                   Weiterlesen
                   <svg
@@ -135,8 +133,8 @@ const Journal = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-16 bg-luxury-light">
-        <div className="luxury-container">
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <SectionTitle
               title="Bleiben Sie informiert"
@@ -148,21 +146,21 @@ const Journal = () => {
                 <input
                   type="email"
                   placeholder="Ihre E-Mail-Adresse"
-                  className="flex-grow px-4 py-3 border border-luxury-charcoal/30 focus:outline-none focus:ring-1 focus:ring-luxury-gold"
+                  className="flex-grow px-4 py-3 border border-black/30 focus:outline-none focus:ring-1 focus:ring-black"
                   required
                 />
                 <Button variant="secondary" size="md" className="whitespace-nowrap">
                   Abonnieren
                 </Button>
               </div>
-              <p className="text-xs text-luxury-charcoal/60 mt-4">
+              <p className="text-xs text-black/60 mt-4">
                 Mit dem Abonnieren stimmen Sie zu, E-Mail-Kommunikation von Kobler Goldschmied & Uhrmacher AG zu erhalten.
               </p>
             </form>
           </div>
         </div>
       </section>
-    </Layout>
+    </div>
   );
 };
 

@@ -1,8 +1,6 @@
 
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,6 +8,8 @@ interface LayoutProps {
 
 // This component is kept for backward compatibility but should not be used
 // for new pages. Use KoblerLayout instead.
+// This now simply renders the children without additional navigation elements
+// to avoid double navigation with KoblerLayout
 const Layout = ({ children }: LayoutProps) => {
   const location = useLocation();
   
@@ -20,9 +20,9 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      {/* No longer including Header component to avoid double navigation */}
       <main className="flex-grow">{children}</main>
-      <Footer />
+      {/* No longer including Footer component to avoid double footer */}
     </div>
   );
 };

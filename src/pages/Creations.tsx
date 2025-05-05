@@ -1,6 +1,4 @@
-
 import React from "react";
-import Layout from "../components/layout/Layout";
 import SectionTitle from "../components/ui/SectionTitle";
 import ProductCard from "../components/ui/ProductCard";
 
@@ -111,13 +109,13 @@ const collections = [
 
 const Creations = () => {
   return (
-    <Layout>
+    <div className="pt-20">
       {/* Hero Section */}
-      <div className="relative pt-24 pb-16 bg-luxury-navy text-white">
-        <div className="luxury-container">
+      <div className="relative pt-24 pb-16 bg-black text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center py-16">
-            <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-6">Unsere Kreationen</h1>
-            <p className="text-xl text-luxury-light/90">
+            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Unsere Kreationen</h1>
+            <p className="text-xl text-white/90">
               Entdecken Sie unsere exquisiten Kollektionen von Uhren, Schmuck und Edelsteinen
             </p>
           </div>
@@ -129,12 +127,12 @@ const Creations = () => {
       {collections.map((collection, index) => (
         <section
           key={index}
-          className={`section-padding ${
-            index % 2 === 0 ? "bg-white" : "bg-luxury-light"
+          className={`py-16 md:py-24 ${
+            index % 2 === 0 ? "bg-white" : "bg-gray-50"
           }`}
           id={collection.title.toLowerCase()}
         >
-          <div className="luxury-container">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionTitle
               title={collection.title}
               subtitle={collection.description}
@@ -153,8 +151,8 @@ const Creations = () => {
       ))}
 
       {/* Custom Creation CTA */}
-      <section className="section-padding bg-luxury-navy text-white">
-        <div className="luxury-container">
+      <section className="py-16 md:py-24 bg-black text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <SectionTitle
               title="Maßgefertigte Kreationen"
@@ -162,13 +160,13 @@ const Creations = () => {
               centered
               light
             />
-            <p className="text-luxury-light/90 mt-8 mb-8">
+            <p className="text-white/90 mt-8 mb-8">
               Unsere Meisterhandwerker kombinieren traditionelle Techniken mit innovativen Ansätzen, um einzigartige Stücke zu schaffen, die Ihre Geschichte erzählen. Von der ersten Idee bis zur endgültigen Kreation arbeiten wir eng mit Ihnen zusammen, um sicherzustellen, dass jedes Detail Ihre Vision widerspiegelt.
             </p>
             <div className="flex justify-center">
               <a
                 href="/contact"
-                className="bg-luxury-gold text-white px-8 py-3 inline-block font-montserrat font-medium transition-colors hover:bg-luxury-gold/90"
+                className="bg-white text-black px-8 py-3 inline-block font-medium transition-colors hover:bg-white/90"
               >
                 Anfrage für maßgefertigte Kreationen
               </a>
@@ -176,7 +174,7 @@ const Creations = () => {
           </div>
         </div>
       </section>
-    </Layout>
+    </div>
   );
 };
 
