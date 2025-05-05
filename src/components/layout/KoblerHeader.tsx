@@ -1,12 +1,16 @@
 
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Search } from "lucide-react";
 
 const KoblerHeader = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState<"de" | "en">("de");
+  const location = useLocation();
+  
+  // Check if the current page has a dark hero section
+  const hasDarkHero = location.pathname === "/perlen";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +29,11 @@ const KoblerHeader = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white border-b border-black/10 py-3" : "bg-transparent py-6"
+        scrolled 
+          ? "bg-white border-b border-black/10 py-3" 
+          : hasDarkHero 
+            ? "bg-transparent py-6 text-white" 
+            : "bg-transparent py-6"
       }`}
     >
       <div className="container-lg">
@@ -47,17 +55,17 @@ const KoblerHeader = () => {
           >
             <div className="flex flex-col justify-between w-6 h-5">
               <span 
-                className={`h-px bg-black transform transition-all duration-300 ${
+                className={`h-px ${hasDarkHero && !scrolled ? "bg-white" : "bg-black"} transform transition-all duration-300 ${
                   mobileMenuOpen ? "rotate-45 translate-y-2" : ""
                 }`}
               />
               <span 
-                className={`h-px bg-black transition-opacity duration-300 ${
+                className={`h-px ${hasDarkHero && !scrolled ? "bg-white" : "bg-black"} transition-opacity duration-300 ${
                   mobileMenuOpen ? "opacity-0" : "opacity-100"
                 }`}
               />
               <span 
-                className={`h-px bg-black transform transition-all duration-300 ${
+                className={`h-px ${hasDarkHero && !scrolled ? "bg-white" : "bg-black"} transform transition-all duration-300 ${
                   mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
                 }`}
               />
@@ -78,17 +86,47 @@ const KoblerHeader = () => {
           
           {/* Desktop Navigation - Centered */}
           <nav className="flex items-center justify-center space-x-12">
-            <Link to="/collections" className="text-sm uppercase tracking-wide hover-underline">Collections</Link>
-            <Link to="/services" className="text-sm uppercase tracking-wide hover-underline">Services</Link>
-            <Link to="/perlen" className="text-sm uppercase tracking-wide hover-underline">Perlen</Link>
-            <Link to="/about" className="text-sm uppercase tracking-wide hover-underline">About</Link>
-            <Link to="/journal" className="text-sm uppercase tracking-wide hover-underline">Journal</Link>
-            <Link to="/contact" className="text-sm uppercase tracking-wide hover-underline">Contact</Link>
+            <Link 
+              to="/collections" 
+              className={`text-sm uppercase tracking-wide hover-underline ${hasDarkHero && !scrolled ? "text-white" : "text-black"}`}
+            >
+              Collections
+            </Link>
+            <Link 
+              to="/services" 
+              className={`text-sm uppercase tracking-wide hover-underline ${hasDarkHero && !scrolled ? "text-white" : "text-black"}`}
+            >
+              Services
+            </Link>
+            <Link 
+              to="/perlen" 
+              className={`text-sm uppercase tracking-wide hover-underline ${hasDarkHero && !scrolled ? "text-white" : "text-black"}`}
+            >
+              Perlen
+            </Link>
+            <Link 
+              to="/about" 
+              className={`text-sm uppercase tracking-wide hover-underline ${hasDarkHero && !scrolled ? "text-white" : "text-black"}`}
+            >
+              About
+            </Link>
+            <Link 
+              to="/journal" 
+              className={`text-sm uppercase tracking-wide hover-underline ${hasDarkHero && !scrolled ? "text-white" : "text-black"}`}
+            >
+              Journal
+            </Link>
+            <Link 
+              to="/contact" 
+              className={`text-sm uppercase tracking-wide hover-underline ${hasDarkHero && !scrolled ? "text-white" : "text-black"}`}
+            >
+              Contact
+            </Link>
           </nav>
           
           {/* Search and Language (Desktop) */}
           <div className="flex items-center space-x-6 absolute right-4 top-1/2 -translate-y-1/2">
-            <button>
+            <button className={hasDarkHero && !scrolled ? "text-white" : "text-black"}>
               <Search size={20} />
             </button>
             
@@ -96,14 +134,20 @@ const KoblerHeader = () => {
             <div className="flex items-center space-x-2">
               <button 
                 onClick={() => switchLanguage("de")} 
-                className={`text-xs uppercase ${currentLanguage === "de" ? "font-bold" : "font-medium text-black/70 hover:text-black"}`}
+                className={`text-xs uppercase ${currentLanguage === "de" 
+                  ? "font-bold" 
+                  : `font-medium ${hasDarkHero && !scrolled ? "text-white/70 hover:text-white" : "text-black/70 hover:text-black"}`
+                }`}
               >
                 DE
               </button>
-              <span className="text-xs text-black/50">|</span>
+              <span className={`text-xs ${hasDarkHero && !scrolled ? "text-white/50" : "text-black/50"}`}>|</span>
               <button 
                 onClick={() => switchLanguage("en")} 
-                className={`text-xs uppercase ${currentLanguage === "en" ? "font-bold" : "font-medium text-black/70 hover:text-black"}`}
+                className={`text-xs uppercase ${currentLanguage === "en" 
+                  ? "font-bold" 
+                  : `font-medium ${hasDarkHero && !scrolled ? "text-white/70 hover:text-white" : "text-black/70 hover:text-black"}`
+                }`}
               >
                 EN
               </button>

@@ -9,9 +9,15 @@ interface NavigationProps {
   }>;
   isMobile?: boolean;
   closeMenu?: () => void;
+  isDarkBackground?: boolean;
 }
 
-const Navigation = ({ navItems, isMobile = false, closeMenu }: NavigationProps) => {
+const Navigation = ({ 
+  navItems, 
+  isMobile = false, 
+  closeMenu,
+  isDarkBackground = false
+}: NavigationProps) => {
   const location = useLocation();
 
   if (isMobile) {
@@ -43,12 +49,18 @@ const Navigation = ({ navItems, isMobile = false, closeMenu }: NavigationProps) 
           to={item.url}
           className={`text-sm uppercase tracking-wider transition-all duration-300 pb-1 relative group
             ${location.pathname === item.url 
-              ? 'text-black font-medium' 
-              : 'text-black/80 hover:text-black font-medium'}`}
+              ? isDarkBackground ? 'text-white font-medium' : 'text-black font-medium' 
+              : isDarkBackground 
+                ? 'text-white/80 hover:text-white font-medium'
+                : 'text-black/80 hover:text-black font-medium'}`}
         >
           {item.title}
           <span className={`absolute bottom-0 left-0 w-full h-[1px] transform origin-left transition-transform duration-300
-            ${location.pathname === item.url ? 'bg-black scale-x-100' : 'bg-black scale-x-0 group-hover:scale-x-100'}`}></span>
+            ${location.pathname === item.url 
+              ? isDarkBackground ? 'bg-white scale-x-100' : 'bg-black scale-x-100' 
+              : isDarkBackground 
+                ? 'bg-white scale-x-0 group-hover:scale-x-100'
+                : 'bg-black scale-x-0 group-hover:scale-x-100'}`}></span>
         </Link>
       ))}
     </div>

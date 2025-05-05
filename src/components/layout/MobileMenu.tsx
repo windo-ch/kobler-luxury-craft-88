@@ -16,6 +16,8 @@ interface MobileMenuProps {
   switchToLanguage: (lang: "de" | "en") => void;
 }
 
+// This component is kept for backward compatibility
+// For new components, use the mobile menu in KoblerHeader instead
 const MobileMenu = ({ 
   isOpen,
   onClose,
@@ -40,7 +42,7 @@ const MobileMenu = ({
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="p-2 text-luxury-charcoal hover:text-luxury-gold focus:outline-none transition-colors"
+          className="p-2 text-black hover:text-black/70 focus:outline-none transition-colors"
           aria-label="Close menu"
         >
           <X className="h-6 w-6" />

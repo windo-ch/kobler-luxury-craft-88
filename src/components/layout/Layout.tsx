@@ -8,6 +8,8 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
+// This component is kept for backward compatibility but should not be used
+// for new pages. Use KoblerLayout instead.
 const Layout = ({ children }: LayoutProps) => {
   const location = useLocation();
   
