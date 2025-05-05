@@ -1,26 +1,23 @@
 
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Search } from "lucide-react";
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
+import useHeaderScroll from "../../hooks/useHeaderScroll";
+import DesktopNav from "./header/DesktopNav";
+import MobileHeader from "./header/MobileHeader";
+import MobileNavMenu from "./header/MobileNavMenu";
 
 const KoblerHeader = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState<"de" | "en">("de");
   const location = useLocation();
+  const scrolled = useHeaderScroll();
   
   // Check if the current page has a dark hero section
   const hasDarkHero = location.pathname === "/perlen";
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
   const switchLanguage = (lang: "de" | "en") => {
     setCurrentLanguage(lang);
@@ -37,200 +34,30 @@ const KoblerHeader = () => {
       }`}
     >
       <div className="container-lg">
-        {/* Mobile header layout with aligned logo and burger */}
-        <div className="flex justify-center items-center relative lg:hidden">
-          <Link to="/" className="z-50">
-            <img 
-              src="/lovable-uploads/2527bd09-b43e-468c-9deb-c5ce7d3b2967.png" 
-              alt="KOBLER"
-              className="h-8 md:h-10 w-auto"
-            />
-          </Link>
-          
-          {/* Mobile Menu Trigger - Positioned absolutely */}
-          <button 
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-50" 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <div className="flex flex-col justify-between w-6 h-5">
-              <span 
-                className={`h-px ${hasDarkHero && !scrolled ? "bg-white" : "bg-black"} transform transition-all duration-300 ${
-                  mobileMenuOpen ? "rotate-45 translate-y-2" : ""
-                }`}
-              />
-              <span 
-                className={`h-px ${hasDarkHero && !scrolled ? "bg-white" : "bg-black"} transition-opacity duration-300 ${
-                  mobileMenuOpen ? "opacity-0" : "opacity-100"
-                }`}
-              />
-              <span 
-                className={`h-px ${hasDarkHero && !scrolled ? "bg-white" : "bg-black"} transform transition-all duration-300 ${
-                  mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
-                }`}
-              />
-            </div>
-          </button>
-        </div>
+        {/* Mobile Header */}
+        <MobileHeader
+          hasDarkHero={hasDarkHero}
+          scrolled={scrolled}
+          toggleMobileMenu={toggleMobileMenu}
+          mobileMenuOpen={mobileMenuOpen}
+        />
         
-        {/* Desktop Layout - Centered navigation */}
-        <div className="hidden lg:flex flex-col items-center">
-          {/* Logo - Centered */}
-          <Link to="/" className="z-50 mb-6">
-            <img 
-              src="/lovable-uploads/2527bd09-b43e-468c-9deb-c5ce7d3b2967.png" 
-              alt="KOBLER"
-              className="h-10 w-auto"
-            />
-          </Link>
-          
-          {/* Desktop Navigation - Centered */}
-          <nav className="flex items-center justify-center space-x-12">
-            <Link 
-              to="/collections" 
-              className={`text-sm uppercase tracking-wide hover-underline ${hasDarkHero && !scrolled ? "text-white" : "text-black"}`}
-            >
-              Collections
-            </Link>
-            <Link 
-              to="/services" 
-              className={`text-sm uppercase tracking-wide hover-underline ${hasDarkHero && !scrolled ? "text-white" : "text-black"}`}
-            >
-              Services
-            </Link>
-            <Link 
-              to="/perlen" 
-              className={`text-sm uppercase tracking-wide hover-underline ${hasDarkHero && !scrolled ? "text-white" : "text-black"}`}
-            >
-              Perlen
-            </Link>
-            <Link 
-              to="/about" 
-              className={`text-sm uppercase tracking-wide hover-underline ${hasDarkHero && !scrolled ? "text-white" : "text-black"}`}
-            >
-              About
-            </Link>
-            <Link 
-              to="/journal" 
-              className={`text-sm uppercase tracking-wide hover-underline ${hasDarkHero && !scrolled ? "text-white" : "text-black"}`}
-            >
-              Journal
-            </Link>
-            <Link 
-              to="/contact" 
-              className={`text-sm uppercase tracking-wide hover-underline ${hasDarkHero && !scrolled ? "text-white" : "text-black"}`}
-            >
-              Contact
-            </Link>
-          </nav>
-          
-          {/* Search and Language (Desktop) */}
-          <div className="flex items-center space-x-6 absolute right-4 top-1/2 -translate-y-1/2">
-            <button className={hasDarkHero && !scrolled ? "text-white" : "text-black"}>
-              <Search size={20} />
-            </button>
-            
-            {/* Language Switcher */}
-            <div className="flex items-center space-x-2">
-              <button 
-                onClick={() => switchLanguage("de")} 
-                className={`text-xs uppercase ${currentLanguage === "de" 
-                  ? "font-bold" 
-                  : `font-medium ${hasDarkHero && !scrolled ? "text-white/70 hover:text-white" : "text-black/70 hover:text-black"}`
-                }`}
-              >
-                DE
-              </button>
-              <span className={`text-xs ${hasDarkHero && !scrolled ? "text-white/50" : "text-black/50"}`}>|</span>
-              <button 
-                onClick={() => switchLanguage("en")} 
-                className={`text-xs uppercase ${currentLanguage === "en" 
-                  ? "font-bold" 
-                  : `font-medium ${hasDarkHero && !scrolled ? "text-white/70 hover:text-white" : "text-black/70 hover:text-black"}`
-                }`}
-              >
-                EN
-              </button>
-            </div>
-          </div>
-        </div>
+        {/* Desktop Navigation */}
+        <DesktopNav
+          hasDarkHero={hasDarkHero}
+          scrolled={scrolled}
+          currentLanguage={currentLanguage}
+          switchLanguage={switchLanguage}
+        />
       </div>
       
-      {/* Mobile Menu Overlay */}
-      <div 
-        className={`fixed inset-0 bg-white z-40 transform transition-transform duration-500 ease-in-out lg:hidden ${
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex flex-col justify-center items-center h-full">
-          <nav className="flex flex-col space-y-8 text-center">
-            <Link 
-              to="/collections"
-              className="text-xl font-serif"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Collections
-            </Link>
-            <Link 
-              to="/services"
-              className="text-xl font-serif"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Services
-            </Link>
-            <Link 
-              to="/perlen"
-              className="text-xl font-serif"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Perlen
-            </Link>
-            <Link 
-              to="/about"
-              className="text-xl font-serif"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link 
-              to="/journal"
-              className="text-xl font-serif"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Journal
-            </Link>
-            <Link 
-              to="/contact"
-              className="text-xl font-serif"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact
-            </Link>
-            
-            {/* Mobile Language Switcher */}
-            <div className="flex space-x-6 pt-6">
-              <button 
-                onClick={() => {
-                  switchLanguage("de");
-                  setMobileMenuOpen(false);
-                }}
-                className={`text-sm uppercase ${currentLanguage === "de" ? "font-bold" : "font-medium text-black/70"}`}
-              >
-                Deutsch
-              </button>
-              <button 
-                onClick={() => {
-                  switchLanguage("en");
-                  setMobileMenuOpen(false);
-                }}
-                className={`text-sm uppercase ${currentLanguage === "en" ? "font-bold" : "font-medium text-black/70"}`}
-              >
-                English
-              </button>
-            </div>
-          </nav>
-        </div>
-      </div>
+      {/* Mobile Menu */}
+      <MobileNavMenu
+        isOpen={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
+        currentLanguage={currentLanguage}
+        switchLanguage={switchLanguage}
+      />
     </header>
   );
 };
