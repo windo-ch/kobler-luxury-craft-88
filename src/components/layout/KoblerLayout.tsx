@@ -19,16 +19,19 @@ const KoblerLayout = () => {
     } else {
       // Mark loading as shown to prevent showing it again
       window.sessionStorage.setItem('loadingShown', 'true');
+      
+      // For better user experience, we'll set a minimum loading time
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 1500);
+      
+      return () => clearTimeout(timer);
     }
   }, [pathname]);
 
-  const handleLoadComplete = () => {
-    setIsLoading(false);
-  };
-
   return (
     <div className="flex flex-col min-h-screen">
-      {isLoading && <LoadingScreen onLoadComplete={handleLoadComplete} />}
+      {isLoading && <LoadingScreen onLoadComplete={() => setIsLoading(false)} />}
       <KoblerHeader />
       <main className="flex-grow">
         <Outlet />

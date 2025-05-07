@@ -10,10 +10,11 @@ const KoblerHeader = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState<"de" | "en">("de");
   const location = useLocation();
-  const scrolled = useHeaderScroll();
+  const { scrolled, pastHeroSection } = useHeaderScroll();
   
   // Check if the current page has a dark hero section
-  const hasDarkHero = location.pathname === "/perlen";
+  const hasDarkHero = location.pathname === "/perlen" || location.pathname === "/";
+  const isHomepage = location.pathname === "/";
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -25,12 +26,12 @@ const KoblerHeader = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? "bg-white border-b border-black/10 py-3" 
+          ? "bg-white border-b border-black/5 py-2 shadow-sm" 
           : hasDarkHero 
-            ? "bg-transparent py-6 text-white" 
-            : "bg-transparent py-6"
+            ? "bg-transparent py-4 md:py-6" 
+            : "bg-transparent py-4 md:py-6"
       }`}
     >
       <div className="container-lg">
@@ -46,6 +47,7 @@ const KoblerHeader = () => {
         <DesktopNav
           hasDarkHero={hasDarkHero}
           scrolled={scrolled}
+          pastHeroSection={pastHeroSection}
           currentLanguage={currentLanguage}
           switchLanguage={switchLanguage}
         />

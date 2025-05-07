@@ -38,6 +38,10 @@
     --radius: 0.5rem;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border;
   }
@@ -45,6 +49,9 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -62,19 +69,19 @@
   }
   
   .heading-xl {
-    @apply font-serif text-4xl md:text-5xl lg:text-7xl font-medium leading-tight;
+    @apply font-serif text-4xl md:text-5xl lg:text-7xl font-medium leading-tight tracking-tight;
   }
   
   .heading-lg {
-    @apply font-serif text-3xl md:text-4xl lg:text-5xl font-medium leading-tight;
+    @apply font-serif text-3xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight;
   }
   
   .heading-md {
-    @apply font-serif text-2xl md:text-3xl font-medium leading-tight;
+    @apply font-serif text-2xl md:text-3xl font-medium leading-tight tracking-tight;
   }
   
   .heading-sm {
-    @apply font-serif text-xl md:text-2xl font-medium leading-tight;
+    @apply font-serif text-xl md:text-2xl font-medium leading-tight tracking-tight;
   }
   
   .body-lg {
@@ -96,4 +103,101 @@
   .btn-outline {
     @apply btn bg-transparent text-black hover:bg-black hover:text-white;
   }
+
+  /* Enhanced luxury components */
+  .luxury-container {
+    @apply container max-w-7xl mx-auto px-5 md:px-12 xl:px-20;
+  }
+  
+  .luxury-section {
+    @apply py-20 md:py-28 lg:py-36;
+  }
+  
+  .luxury-section-sm {
+    @apply py-14 md:py-20;
+  }
+  
+  .luxury-heading {
+    @apply font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight;
+  }
+  
+  .editorial-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-x-6 gap-y-12 md:gap-y-20;
+  }
+  
+  .image-frame {
+    @apply relative overflow-hidden;
+  }
+  
+  .image-frame img {
+    @apply w-full h-full object-cover transition-transform duration-700;
+  }
+  
+  .hover-zoom:hover img {
+    @apply scale-110;
+  }
+  
+  .hover-reveal {
+    @apply relative overflow-hidden;
+  }
+  
+  .hover-reveal-content {
+    @apply absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 transition-opacity duration-300;
+  }
+  
+  .hover-reveal:hover .hover-reveal-content {
+    @apply opacity-100;
+  }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    @apply transform rotate-180;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+/* Improved horizontal divider */
+.divider-horizontal {
+  @apply relative h-px w-full bg-black/10 my-8 md:my-12;
+}
+
+.divider-horizontal::after {
+  content: '';
+  @apply absolute h-px w-1/6 bg-black left-0 top-0;
 }
