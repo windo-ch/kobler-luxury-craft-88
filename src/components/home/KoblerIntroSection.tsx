@@ -14,7 +14,7 @@ const KoblerIntroSection = () => {
     <section ref={ref} id="intro-section" className="py-24 md:py-32 bg-white">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className={`font-serif text-3xl md:text-4xl lg:text-5xl font-medium leading-tight mb-8 transition-all duration-1000 ease-out ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <h2 className={`font-sans text-3xl md:text-4xl lg:text-5xl font-medium leading-tight mb-8 transition-all duration-1000 ease-out ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             Kobler Goldschmied & Uhrmacher AG
           </h2>
           
