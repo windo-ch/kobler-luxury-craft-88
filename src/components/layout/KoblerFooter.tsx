@@ -17,19 +17,19 @@ const KoblerFooter = () => {
             <Link to="/" className="inline-block mb-6">
               <h2 className="font-serif text-xl tracking-tight">KOBLER</h2>
             </Link>
-            <p className="text-sm text-black/70 mb-8 max-w-md">
+            <p className="text-sm text-black/70 mb-8 max-w-md leading-relaxed">
               {language === 'de' 
                 ? 'Exzellenz in feiner Uhrmacherei und Schmuckherstellung seit 1996. In Zug, Schweiz, verbindet unser Atelier traditionelles Handwerk mit zeitgenössischem Design, um zeitlose Stücke zu kreieren.'
                 : 'Excellence in fine watchmaking and jewelry since 1996. Located in the heart of Zug, Switzerland, our atelier combines traditional craftsmanship with contemporary design to create timeless pieces.'}
             </p>
             <div className="flex space-x-5">
-              <a href="#" className="text-black hover:text-black/70 transition-colors" aria-label="Instagram">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-black hover:text-black/70 transition-colors" aria-label="Instagram">
                 <Instagram size={18} />
               </a>
-              <a href="#" className="text-black hover:text-black/70 transition-colors" aria-label="Facebook">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-black hover:text-black/70 transition-colors" aria-label="Facebook">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="text-black hover:text-black/70 transition-colors" aria-label="Twitter">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-black hover:text-black/70 transition-colors" aria-label="Twitter">
                 <Twitter size={18} />
               </a>
             </div>
@@ -75,7 +75,7 @@ const KoblerFooter = () => {
           {/* Column 4: Newsletter */}
           <div className="lg:col-span-4">
             <h3 className="text-sm font-medium uppercase tracking-wider mb-6">{t('footer.newsletter')}</h3>
-            <p className="text-sm text-black/70 mb-6">
+            <p className="text-sm text-black/70 mb-6 leading-relaxed">
               {t('footer.newsletter.desc')}
             </p>
             <form className="space-y-4">
@@ -99,7 +99,7 @@ const KoblerFooter = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <p className="text-xs text-black/70">
-                {t('footer.copyright')}
+                © {currentYear} Kobler Goldschmied & Uhrmacher AG. {language === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
               </p>
             </div>
             <div className="md:text-right">
