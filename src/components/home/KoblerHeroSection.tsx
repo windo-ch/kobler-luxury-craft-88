@@ -23,7 +23,7 @@ const KoblerHeroSection = () => {
   };
 
   return (
-    <section className="relative w-full h-[100vh] overflow-hidden">
+    <section className="relative w-full h-screen overflow-hidden">
       {/* Full screen background image with no margins */}
       <div className="absolute inset-0 w-full h-full">
         <img
@@ -35,10 +35,10 @@ const KoblerHeroSection = () => {
       </div>
       
       {/* Content overlay - perfectly centered both horizontally and vertically */}
-      <div className="absolute inset-0 flex flex-col justify-center items-center">
+      <div className="relative flex flex-col justify-center items-center h-full">
         <div className="container mx-auto px-6 md:px-8 lg:px-12">
           <div className={`max-w-3xl mx-auto text-center transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-            <h1 className="text-white font-sans text-4xl md:text-5xl lg:text-7xl font-medium leading-tight tracking-tight mb-8">
+            <h1 className="text-white font-serif text-4xl md:text-5xl lg:text-7xl font-medium leading-tight tracking-tight mb-8">
               Timeless Elegance.<br className="hidden md:block" /> Masterful Craftsmanship.
             </h1>
             <p className="text-white/90 text-lg md:text-xl mb-10 max-w-xl mx-auto">
