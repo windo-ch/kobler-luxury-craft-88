@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 
 // Pearl page sections
 import PearlsHero from "@/components/pearls/PearlsHero";
@@ -11,6 +11,11 @@ import PearlsGallery from "@/components/pearls/PearlsGallery";
 import Newsletter from "@/components/common/Newsletter";
 
 const Perlen = () => {
+  useEffect(() => {
+    // Update document title for SEO
+    document.title = 'Pearls Collection | Kobler Goldschmied & Uhrmacher';
+  }, []);
+
   return (
     <>
       <PearlsHero />

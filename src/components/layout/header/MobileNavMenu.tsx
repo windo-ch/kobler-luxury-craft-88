@@ -37,7 +37,7 @@ const MobileNavMenu = ({
     return `${100 + (index * 75)}ms`;
   };
   
-  // Menu items
+  // Menu items - matching desktop navigation for consistency
   const menuItems = [
     { title: t('nav.collections'), url: "/collections" },
     { title: t('nav.services'), url: "/services" },

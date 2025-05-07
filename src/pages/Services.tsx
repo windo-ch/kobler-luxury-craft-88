@@ -1,6 +1,5 @@
 
-import React from "react";
-import Layout from "../components/layout/KoblerLayout";
+import React, { useEffect } from "react";
 import ServiceHero from "../components/services/ServiceHero";
 import ServiceOverview from "../components/services/ServiceOverview";
 import GoldsmithService from "../components/services/GoldsmithService";
@@ -10,8 +9,13 @@ import AppraisalService from "../components/services/AppraisalService";
 import ServiceCta from "../components/services/ServiceCta";
 
 const Services = () => {
+  useEffect(() => {
+    // Update document title for SEO
+    document.title = 'Our Services | Kobler Goldschmied & Uhrmacher';
+  }, []);
+
   return (
-    <div className="pt-24">
+    <>
       {/* Hero Section */}
       <ServiceHero />
 
@@ -26,7 +30,7 @@ const Services = () => {
 
       {/* CTA Section */}
       <ServiceCta />
-    </div>
+    </>
   );
 };
 

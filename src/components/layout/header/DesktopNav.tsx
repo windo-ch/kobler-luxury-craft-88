@@ -21,7 +21,6 @@ const DesktopNav = ({
 }: DesktopNavProps) => {
   const location = useLocation();
   const { t } = useLanguage();
-  const isHomepage = location.pathname === "/";
   
   // Get text color based on scroll position and page
   const getTextColor = () => {
@@ -29,6 +28,16 @@ const DesktopNav = ({
     if (hasDarkHero) return "text-white";
     return "text-black";
   };
+
+  // Navigation items - centralized for consistency
+  const navigationItems = [
+    { path: "/collections", label: t('nav.collections') },
+    { path: "/services", label: t('nav.services') },
+    { path: "/perlen", label: t('nav.pearls') },
+    { path: "/about", label: t('nav.about') },
+    { path: "/journal", label: t('nav.journal') },
+    { path: "/contact", label: t('nav.contact') }
+  ];
 
   return (
     <div className={`hidden lg:flex flex-col items-center transition-all duration-500 ${scrolled ? "py-2" : "py-6"}`}>
@@ -43,42 +52,15 @@ const DesktopNav = ({
       
       {/* Desktop Navigation - Centered */}
       <nav className="flex items-center justify-center space-x-12">
-        <Link 
-          to="/collections" 
-          className={`text-sm uppercase tracking-wide hover-underline transition-colors duration-300 ${getTextColor()} hover:opacity-80`}
-        >
-          {t('nav.collections')}
-        </Link>
-        <Link 
-          to="/services" 
-          className={`text-sm uppercase tracking-wide hover-underline transition-colors duration-300 ${getTextColor()} hover:opacity-80`}
-        >
-          {t('nav.services')}
-        </Link>
-        <Link 
-          to="/perlen" 
-          className={`text-sm uppercase tracking-wide hover-underline transition-colors duration-300 ${getTextColor()} hover:opacity-80`}
-        >
-          {t('nav.pearls')}
-        </Link>
-        <Link 
-          to="/about" 
-          className={`text-sm uppercase tracking-wide hover-underline transition-colors duration-300 ${getTextColor()} hover:opacity-80`}
-        >
-          {t('nav.about')}
-        </Link>
-        <Link 
-          to="/journal" 
-          className={`text-sm uppercase tracking-wide hover-underline transition-colors duration-300 ${getTextColor()} hover:opacity-80`}
-        >
-          {t('nav.journal')}
-        </Link>
-        <Link 
-          to="/contact" 
-          className={`text-sm uppercase tracking-wide hover-underline transition-colors duration-300 ${getTextColor()} hover:opacity-80`}
-        >
-          {t('nav.contact')}
-        </Link>
+        {navigationItems.map((item) => (
+          <Link 
+            key={item.path}
+            to={item.path} 
+            className={`text-sm uppercase tracking-wide hover-underline transition-colors duration-300 ${getTextColor()} hover:opacity-80`}
+          >
+            {item.label}
+          </Link>
+        ))}
       </nav>
       
       {/* Search and Language (Desktop) */}

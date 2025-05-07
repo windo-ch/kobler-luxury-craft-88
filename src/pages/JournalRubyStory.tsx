@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import RubyStoryHero from "../components/journal/RubyStoryHero";
 import RubyStoryHeader from "../components/journal/RubyStoryHeader";
 import RubyStoryContent from "../components/journal/RubyStoryContent";
@@ -7,6 +7,11 @@ import RelatedArticles from "../components/journal/RelatedArticles";
 import CallToAction from "../components/journal/CallToAction";
 
 const JournalRubyStory = () => {
+  useEffect(() => {
+    // Update document title for SEO
+    document.title = 'Ruby Story | Kobler Journal';
+  }, []);
+  
   return (
     <>
       {/* Hero Section */}
