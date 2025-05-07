@@ -6,14 +6,14 @@ type Language = 'de' | 'en';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string, fallback?: string) => string;
+  t: (key: string) => string;
 }
 
 // Default context value
 const defaultContext: LanguageContextType = {
   language: 'de',
   setLanguage: () => {},
-  t: (key: string, fallback?: string) => fallback || key,
+  t: (key: string) => key,
 };
 
 const LanguageContext = createContext<LanguageContextType>(defaultContext);
@@ -35,10 +35,6 @@ const translations = {
     'home.hero.cta.collections': 'Entdecken Sie die Kollektion',
     'home.hero.cta.story': 'Unsere Geschichte',
     'home.hero.explore': 'Entdecken',
-    
-    // Intro section
-    'intro.paragraph1': 'Seit 1996 steht der Name Kobler für exquisite Handwerkskunst, seltene Edelsteine und hervorragende Uhrmacherei in Zug. Unsere Arbeit verbindet traditionelles Handwerk mit moderner Innovation, um zeitlose Stücke zu schaffen, die Generationen überdauern.',
-    'intro.paragraph2': 'Jedes Kobler-Schmuckstück und jede restaurierte Uhr trägt die Signatur eines Handwerks, das in seiner Präzision und seinem künstlerischen Ausdruck unvergleichlich ist. Wir laden Sie ein, die Welt von Kobler zu entdecken.',
     
     // Footer
     'footer.newsletter': 'Newsletter',
@@ -62,10 +58,6 @@ const translations = {
     'home.hero.cta.collections': 'Discover The Collection',
     'home.hero.cta.story': 'Our Story',
     'home.hero.explore': 'Explore',
-    
-    // Intro section
-    'intro.paragraph1': 'Since 1996, the name Kobler has stood for exquisite craftsmanship, rare gemstones, and outstanding watchmaking in Zug. Our work combines traditional craftsmanship with modern innovation to create timeless pieces that endure for generations.',
-    'intro.paragraph2': 'Each Kobler piece of jewelry and each restored watch bears the signature of a craft that is incomparable in its precision and artistic expression. We invite you to discover the world of Kobler.',
     
     // Footer
     'footer.newsletter': 'Newsletter',
@@ -92,10 +84,9 @@ export const LanguageProvider: React.FC<{children: ReactNode}> = ({ children }) 
     document.documentElement.lang = lang;
   };
 
-  // Translation function that accepts a fallback value
-  const t = (key: string, fallback?: string): string => {
-    const langDict = translations[language];
-    return langDict[key as keyof typeof langDict] || fallback || key;
+  // Translation function
+  const t = (key: string): string => {
+    return translations[language][key as keyof typeof translations[typeof language]] || key;
   };
 
   return (

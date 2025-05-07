@@ -21,11 +21,11 @@ const KoblerIntroSection = () => {
           <div className={`h-px w-20 bg-black/30 mx-auto mb-10 transition-all duration-1000 delay-300 ease-out ${inView ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}></div>
           
           <p className={`text-lg md:text-xl text-black/80 leading-relaxed mb-6 transition-all duration-1000 delay-500 ease-out ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            {t('intro.paragraph1')}
+            {t('intro.paragraph1', 'Seit 1996 steht der Name Kobler für exquisite Handwerkskunst, seltene Edelsteine und hervorragende Uhrmacherei in Zug. Unsere Arbeit verbindet traditionelles Handwerk mit moderner Innovation, um zeitlose Stücke zu schaffen, die Generationen überdauern.')}
           </p>
           
           <p className={`text-lg md:text-xl text-black/80 leading-relaxed transition-all duration-1000 delay-700 ease-out ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            {t('intro.paragraph2')}
+            {t('intro.paragraph2', 'Jedes Kobler-Schmuckstück und jede restaurierte Uhr trägt die Signatur eines Handwerks, das in seiner Präzision und seinem künstlerischen Ausdruck unvergleichlich ist. Wir laden Sie ein, die Welt von Kobler zu entdecken.')}
           </p>
         </div>
       </div>
