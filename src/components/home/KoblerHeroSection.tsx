@@ -23,9 +23,9 @@ const KoblerHeroSection = () => {
   };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
-      {/* Full screen background image with no margins */}
-      <div className="absolute inset-0 w-full h-full">
+    <section className="relative w-full h-screen overflow-hidden m-0 p-0">
+      {/* Full screen background image without margins or padding */}
+      <div className="absolute inset-0 w-full h-full m-0 p-0">
         <img
           src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&q=80&w=2400"
           alt="Kobler luxury timepiece"
@@ -34,8 +34,8 @@ const KoblerHeroSection = () => {
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
       
-      {/* Content overlay - perfectly centered both horizontally and vertically */}
-      <div className="relative flex flex-col justify-center items-center h-full">
+      {/* Content overlay - centered horizontally and vertically */}
+      <div className="absolute inset-0 flex items-center justify-center w-full h-full m-0 p-0">
         <div className="container mx-auto px-6 md:px-8 lg:px-12">
           <div className={`max-w-3xl mx-auto text-center transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <h1 className="text-white font-serif text-4xl md:text-5xl lg:text-7xl font-medium leading-tight tracking-tight mb-8">
