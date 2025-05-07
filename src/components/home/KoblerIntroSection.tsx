@@ -1,11 +1,11 @@
 
-import React, { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import React from "react";
+import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 const KoblerIntroSection = () => {
   const { t } = useLanguage();
-  const [ref, inView] = useInView({
+  const [ref, inView] = useIntersectionObserver<HTMLElement>({
     threshold: 0.3,
     triggerOnce: true,
   });

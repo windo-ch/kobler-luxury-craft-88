@@ -44,5 +44,5 @@ export const useIntersectionObserver = <T extends Element>(
   return [ref, isIntersecting];
 };
 
-// For convenience - this re-exports the hook as a named function
+// For convenience - this exports the hook as a named function
 export const useInView = useIntersectionObserver;
