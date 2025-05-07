@@ -57,17 +57,25 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif font-medium tracking-tight;
   }
+  
+  /* Improve image rendering */
+  img {
+    @apply max-w-full h-auto;
+  }
 }
 
 @layer components {
+  /* Container utilities */
   .container-lg {
     @apply container max-w-7xl mx-auto px-4 md:px-8 xl:px-16;
   }
   
+  /* Spacing utilities */
   .section-padding {
     @apply py-16 md:py-24 lg:py-32;
   }
   
+  /* Typography system */
   .heading-xl {
     @apply font-serif text-4xl md:text-5xl lg:text-7xl font-medium leading-tight tracking-tight;
   }
@@ -96,6 +104,7 @@
     @apply font-sans text-sm leading-relaxed;
   }
   
+  /* Button system */
   .btn {
     @apply inline-flex items-center justify-center whitespace-nowrap rounded-none border border-black bg-black px-6 py-3 text-xs font-medium uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-black focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black disabled:pointer-events-none disabled:opacity-50;
   }
@@ -106,7 +115,7 @@
 
   /* Enhanced luxury components */
   .luxury-container {
-    @apply container max-w-7xl mx-auto px-5 md:px-12 xl:px-20;
+    @apply container mx-auto px-5 md:px-12 xl:px-20;
   }
   
   .luxury-section {
@@ -121,10 +130,12 @@
     @apply font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight;
   }
   
+  /* Editorial grid system */
   .editorial-grid {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-x-6 gap-y-12 md:gap-y-20;
   }
   
+  /* Image treatments */
   .image-frame {
     @apply relative overflow-hidden;
   }
@@ -149,6 +160,7 @@
     @apply opacity-100;
   }
 
+  /* Specialty text treatments */
   .vertical-text {
     writing-mode: vertical-rl;
     text-orientation: mixed;
@@ -157,6 +169,19 @@
   
   .text-balance {
     text-wrap: balance;
+  }
+  
+  /* Refined dividers */
+  .divider {
+    @apply h-px bg-black/10 my-8;
+  }
+  
+  .divider-center {
+    @apply divider w-16 mx-auto;
+  }
+  
+  .divider-left {
+    @apply divider w-16;
   }
 }
 
@@ -172,8 +197,36 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.8s ease-out forwards;
 }
 
 .animate-delay-100 {
@@ -200,4 +253,27 @@
 .divider-horizontal::after {
   content: '';
   @apply absolute h-px w-1/6 bg-black left-0 top-0;
+}
+
+/* Navigation hover effect */
+.hover-underline {
+  position: relative;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

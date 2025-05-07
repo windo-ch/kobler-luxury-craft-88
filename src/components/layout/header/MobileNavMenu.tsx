@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Twitter } from "lucide-react";
+import { useLanguage } from "../../../contexts/LanguageContext";
 
 interface MobileNavMenuProps {
   isOpen: boolean;
@@ -16,6 +17,8 @@ const MobileNavMenu = ({
   currentLanguage, 
   switchLanguage 
 }: MobileNavMenuProps) => {
+  const { t } = useLanguage();
+  
   // Lock body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
@@ -36,12 +39,12 @@ const MobileNavMenu = ({
   
   // Menu items
   const menuItems = [
-    { title: "Collections", url: "/collections" },
-    { title: "Services", url: "/services" },
-    { title: "Perlen", url: "/perlen" },
-    { title: "About", url: "/about" },
-    { title: "Journal", url: "/journal" },
-    { title: "Contact", url: "/contact" }
+    { title: t('nav.collections'), url: "/collections" },
+    { title: t('nav.services'), url: "/services" },
+    { title: t('nav.pearls'), url: "/perlen" },
+    { title: t('nav.about'), url: "/about" },
+    { title: t('nav.journal'), url: "/journal" },
+    { title: t('nav.contact'), url: "/contact" }
   ];
 
   return (
@@ -77,6 +80,7 @@ const MobileNavMenu = ({
           <button 
             onClick={() => {
               switchLanguage("de");
+              onClose();
             }}
             className={`text-sm uppercase ${currentLanguage === "de" ? "font-bold" : "font-medium text-black/70"}`}
           >
@@ -85,6 +89,7 @@ const MobileNavMenu = ({
           <button 
             onClick={() => {
               switchLanguage("en");
+              onClose();
             }}
             className={`text-sm uppercase ${currentLanguage === "en" ? "font-bold" : "font-medium text-black/70"}`}
           >

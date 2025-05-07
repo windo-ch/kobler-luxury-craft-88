@@ -2,6 +2,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Search } from "lucide-react";
+import { useLanguage } from "../../../contexts/LanguageContext";
 
 interface DesktopNavProps {
   hasDarkHero: boolean;
@@ -19,6 +20,7 @@ const DesktopNav = ({
   switchLanguage 
 }: DesktopNavProps) => {
   const location = useLocation();
+  const { t } = useLanguage();
   const isHomepage = location.pathname === "/";
   
   // Get text color based on scroll position and page
@@ -45,37 +47,37 @@ const DesktopNav = ({
           to="/collections" 
           className={`text-sm uppercase tracking-wide hover-underline transition-colors duration-300 ${getTextColor()} hover:opacity-80`}
         >
-          Collections
+          {t('nav.collections')}
         </Link>
         <Link 
           to="/services" 
           className={`text-sm uppercase tracking-wide hover-underline transition-colors duration-300 ${getTextColor()} hover:opacity-80`}
         >
-          Services
+          {t('nav.services')}
         </Link>
         <Link 
           to="/perlen" 
           className={`text-sm uppercase tracking-wide hover-underline transition-colors duration-300 ${getTextColor()} hover:opacity-80`}
         >
-          Perlen
+          {t('nav.pearls')}
         </Link>
         <Link 
           to="/about" 
           className={`text-sm uppercase tracking-wide hover-underline transition-colors duration-300 ${getTextColor()} hover:opacity-80`}
         >
-          About
+          {t('nav.about')}
         </Link>
         <Link 
           to="/journal" 
           className={`text-sm uppercase tracking-wide hover-underline transition-colors duration-300 ${getTextColor()} hover:opacity-80`}
         >
-          Journal
+          {t('nav.journal')}
         </Link>
         <Link 
           to="/contact" 
           className={`text-sm uppercase tracking-wide hover-underline transition-colors duration-300 ${getTextColor()} hover:opacity-80`}
         >
-          Contact
+          {t('nav.contact')}
         </Link>
       </nav>
       

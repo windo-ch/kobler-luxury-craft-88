@@ -5,10 +5,11 @@ import useHeaderScroll from "../../hooks/useHeaderScroll";
 import DesktopNav from "./header/DesktopNav";
 import MobileHeader from "./header/MobileHeader";
 import MobileNavMenu from "./header/MobileNavMenu";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 const KoblerHeader = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState<"de" | "en">("de");
+  const { language, setLanguage } = useLanguage();
   const location = useLocation();
   const { scrolled, pastHeroSection } = useHeaderScroll();
   
@@ -21,7 +22,7 @@ const KoblerHeader = () => {
   };
 
   const switchLanguage = (lang: "de" | "en") => {
-    setCurrentLanguage(lang);
+    setLanguage(lang);
   };
 
   return (
@@ -34,7 +35,7 @@ const KoblerHeader = () => {
             : "bg-transparent py-4 md:py-6"
       }`}
     >
-      <div className="container-lg">
+      <div className="container mx-auto px-4 md:px-8 xl:px-12">
         {/* Mobile Header */}
         <MobileHeader
           hasDarkHero={hasDarkHero}
@@ -48,7 +49,7 @@ const KoblerHeader = () => {
           hasDarkHero={hasDarkHero}
           scrolled={scrolled}
           pastHeroSection={pastHeroSection}
-          currentLanguage={currentLanguage}
+          currentLanguage={language}
           switchLanguage={switchLanguage}
         />
       </div>
@@ -57,7 +58,7 @@ const KoblerHeader = () => {
       <MobileNavMenu
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
-        currentLanguage={currentLanguage}
+        currentLanguage={language}
         switchLanguage={switchLanguage}
       />
     </header>
