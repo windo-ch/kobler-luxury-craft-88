@@ -11,11 +11,15 @@ const KoblerFooter = () => {
   return (
     <footer className="bg-white pt-24 pb-12 border-t border-black/10">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           {/* Column 1: Logo and Intro */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
-              <h2 className="font-serif text-xl tracking-tight">KOBLER</h2>
+              <img 
+                src="https://images.unsplash.com/photo-1624913503273-5f9c4e980dba?q=80&w=2070&auto=format&fit=crop" 
+                alt="Kobler Logo"
+                className="h-12 w-auto object-contain brightness-0 invert-0"
+              />
             </Link>
             <p className="text-sm text-black/70 mb-8 max-w-md leading-relaxed">
               {language === 'de' 
@@ -36,7 +40,7 @@ const KoblerFooter = () => {
           </div>
           
           {/* Column 2: Navigation Links */}
-          <div className="lg:col-span-2 lg:col-start-6">
+          <div className="lg:col-span-1">
             <h3 className="text-sm font-medium uppercase tracking-wider mb-6">Navigation</h3>
             <ul className="space-y-4">
               <li><Link to="/collections" className="text-sm text-black/70 hover:text-black transition-colors">{t('nav.collections')}</Link></li>
@@ -49,7 +53,7 @@ const KoblerFooter = () => {
           </div>
           
           {/* Column 3: Legal */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1">
             <h3 className="text-sm font-medium uppercase tracking-wider mb-6">
               {language === 'de' ? 'Rechtliches' : 'Legal'}
             </h3>
@@ -73,7 +77,7 @@ const KoblerFooter = () => {
           </div>
           
           {/* Column 4: Newsletter */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-1">
             <h3 className="text-sm font-medium uppercase tracking-wider mb-6">{t('footer.newsletter')}</h3>
             <p className="text-sm text-black/70 mb-6 leading-relaxed">
               {t('footer.newsletter.desc')}
@@ -95,7 +99,7 @@ const KoblerFooter = () => {
         </div>
         
         {/* Copyright and Address */}
-        <div className="mt-20 pt-8 border-t border-black/10">
+        <div className="pt-8 border-t border-black/10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <p className="text-xs text-black/70">

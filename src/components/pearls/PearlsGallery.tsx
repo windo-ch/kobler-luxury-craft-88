@@ -4,32 +4,32 @@ import React from "react";
 const PearlsGallery = () => {
   const galleryImages = [
     {
-      src: "/lovable-uploads/48a37f93-58c9-41ff-ad7b-06457b292d4e.png",
+      src: "https://images.unsplash.com/photo-1602752250015-52934bc45613?q=80&w=2070&auto=format&fit=crop",
       alt: "Perlenschmuck",
       caption: "Exquisite Perlenkette"
     },
     {
-      src: "/lovable-uploads/275576c8-3701-40c8-8141-f70b4c22cb93.png",
+      src: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=2070&auto=format&fit=crop",
       alt: "Perlenfarm",
       caption: "Perlenfarm im Südpazifik"
     },
     {
-      src: "/lovable-uploads/b5d8ded1-b837-4209-8245-bd9f8b115919.png",
+      src: "https://images.unsplash.com/photo-1633810542706-90e5ff7557be?q=80&w=2070&auto=format&fit=crop",
       alt: "Geöffnete Perlenmuschel",
       caption: "Perlen in der geöffneten Muschel"
     },
     {
-      src: "/lovable-uploads/f20decfa-ccdd-4018-96b0-19e83f4e00b4.png",
+      src: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=2071&auto=format&fit=crop",
       alt: "Schwarze Perlen",
       caption: "Tahiti Perlen mit charakteristischem dunklen Farbton"
     },
     {
-      src: "/lovable-uploads/afd1ab53-c73d-448e-a1ee-76d2b4b836b2.png",
+      src: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?q=80&w=2070&auto=format&fit=crop",
       alt: "Perlenring",
       caption: "Eleganter Perlenring mit Diamantbesatz"
     },
     {
-      src: "/lovable-uploads/4712e8ff-4b1e-472b-b628-75fef4ff7b7d.png",
+      src: "https://images.unsplash.com/photo-1600721391689-2564bb8055de?q=80&w=2059&auto=format&fit=crop",
       alt: "Goldene Perlen",
       caption: "Golden schimmernde Südseeperlen"
     },
